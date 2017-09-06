@@ -5,20 +5,19 @@
  *
  * @return \Plugin_Name\Plugin
  */
-function plugin_name()
-{
-    static $plugin = null;
+function plugin_name() {
+	static $plugin = null;
 
-    if (null === $plugin) {
-        $plugin = require_once dirname(__DIR__) . '/bootstrap/plugin.php';
+	if ( null === $plugin ) {
+		$plugin = require_once dirname( __DIR__ ) . '/bootstrap/plugin.php';
 
-        register_activation_hook(__FILE__, 'plugin_name_activate');
-        register_deactivation_hook(__FILE__, 'plugin_name_deactivate');
+		register_activation_hook( __FILE__, 'plugin_name_activate' );
+		register_deactivation_hook( __FILE__, 'plugin_name_deactivate' );
 
-        $plugin->register();
-    }
+		$plugin->register();
+	}
 
-    return $plugin;
+	return $plugin;
 }
 
 /**
@@ -28,9 +27,9 @@ function plugin_name()
  * @return void
  */
 function plugin_name_activate() {
-    Plugin_Name\Plugin::activate();
+	Plugin_Name\Plugin::activate();
 
-    register_uninstall_hook(__FILE__, 'plugin_name_uninstall');
+	register_uninstall_hook( __FILE__, 'plugin_name_uninstall' );
 }
 
 /**
@@ -39,7 +38,7 @@ function plugin_name_activate() {
  * @return void
  */
 function plugin_name_deactivate() {
-    Plugin_Name\Plugin::deactivate();
+	Plugin_Name\Plugin::deactivate();
 }
 
 /**
@@ -48,5 +47,5 @@ function plugin_name_deactivate() {
  * @return void
  */
 function plugin_name_uninstall() {
-    Plugin_Name\Plugin::uninstall();
+	Plugin_Name\Plugin::uninstall();
 }

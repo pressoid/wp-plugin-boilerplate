@@ -2,25 +2,24 @@
 
 namespace Plugin_Name\Widgets;
 
-class Example_Widget extends Widget
-{
-    function __construct() {
-        parent::__construct(
-            'plugin-name-widget',
-            __( 'Plugin Widget', 'plugin-name' ),
-            [ 'description' => __( 'Short description of the widget.', 'plugin-name' ) ]
-        );
-    }
+class Example_Widget extends Widget {
 
-    function widget( $arguments, $instance ) {
-        //
-    }
+	function __construct() {
+		parent::__construct(
+			'plugin-name-widget',
+			__( 'Plugin Widget', 'plugin-name' ),
+			[
+				'description' => __( 'Short description of the widget.', 'plugin-name' ),
+			]
+		);
+	}
 
-    function form( $instance ) {
-        //
-    }
+	function widget( $arguments, $instance ) {
+	}
 
-    function update( $new_instance, $old_instance ) {
-        //
-    }
+	function form( $instance ) {
+	}
+
+	function update( $new_instance, $old_instance ) {
+	}
 }

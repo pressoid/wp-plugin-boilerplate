@@ -2,7 +2,5 @@
 
 namespace Plugin_Name\Contracts;
 
-interface Service extends Registrar
-{
-    //
+interface Service extends Registrar {
 }
