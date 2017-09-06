@@ -3,26 +3,31 @@
 namespace Plugin_Name;
 
 use Plugin_Name\Admin\Settings;
+use Plugin_Name\Contracts\Registrar;
 use Plugin_Name\Widget\Factory;
 
-class Plugin
+final class Plugin implements Registrar
 {
     public $settings;
 
+    /**
+     * [$widgets description]
+     * @var [type]
+     */
     public $widgets;
 
     public function __construct(
-        Settings $settings,
+        Settings $pages,
         Factory $widgets
     ) {
-        $this->settings = $settings;
+        $this->pages = $pages;
         $this->widgets = $widgets;
     }
 
-    public function run()
+    public function register()
     {
-        add_action('admin_menu', [$this->settings, 'page']);
-        add_action('widgets_init', [$this->widgets, 'register']);
+        add_action( 'admin_menu', [ $this->settings, 'register' ] );
+        add_action( 'widgets_init', [ $this->widgets, 'register' ] );
     }
 
     public static function activate()
