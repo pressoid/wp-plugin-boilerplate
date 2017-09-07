@@ -5,6 +5,11 @@ namespace Plugin_Name\Admin\Pages;
 use Plugin_Name\Admin\Submenu_Page;
 
 class Settings extends Submenu_Page {
+	/**
+	 * Render settings page content.
+	 *
+	 * @return void
+	 */
 	public function render() {
 	?>
 		<div class="wrap">

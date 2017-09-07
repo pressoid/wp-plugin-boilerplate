@@ -13,7 +13,7 @@
  */
 
 if (! defined('WPINC')) {
-    die();
+	die();
 }
 
 require_once 'bootstrap/autoload.php';

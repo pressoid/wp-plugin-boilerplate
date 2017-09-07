@@ -11,5 +11,14 @@ class Pages_Service_Provider extends Service_Provider {
 	 *
 	 * @var string
 	 */
-	const PROVIDER_NAME = 'pages';
+	const NAME = 'pages';
+
+	/**
+	 * Registers pages services at `admin_menu` hook.
+	 *
+	 * @return void
+	 */
+	public function boot() {
+		add_action( 'admin_menu', [ $this, 'register' ] );
+	}
 }

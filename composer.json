@@ -1,27 +1,27 @@
 {
-  "name": "jedrzejchalubek/wp-plugin-boilerplate",
-  "description": "WordPress Plugin Boilerplate.",
-  "keywords": ["wordpress", "wordpress-plugin", "wordpress-widget"],
-  "homepage": "https://github.com/jedrzejchalubek/wp-plugin-boilerplate",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Jędrzej Chałubek <jedrzejchalubek>",
-      "email": "jedrzejchalubek@gamil.com",
-      "homepage": "http://jedrzejchalubek.com",
-      "role": "Developer"
-    }
-  ],
-  "scripts": {
-    "phpcs": "phpcs --standard=WordPress ./src",
-    "phpcbf": "phpcbf --standard=WordPress ./src",
-    "lint": "composer run-script phpcs && composer run-script phpcbf"
-  },
-  "require": {
-    "php": ">=5.3.0"
-  },
-  "require-dev": {
-    "dealerdirect/phpcodesniffer-composer-installer": "^0.4.2",
-    "wp-coding-standards/wpcs": "^0.13.1"
-  }
+	"name": "jedrzejchalubek/wp-plugin-boilerplate",
+	"description": "WordPress Plugin Boilerplate.",
+	"keywords": ["wordpress", "wordpress-plugin", "wordpress-widget"],
+	"homepage": "https://github.com/jedrzejchalubek/wp-plugin-boilerplate",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Jędrzej Chałubek <jedrzejchalubek>",
+			"email": "jedrzejchalubek@gamil.com",
+			"homepage": "http://jedrzejchalubek.com",
+			"role": "Developer"
+		}
+	],
+	"scripts": {
+		"phpcs": "phpcs --standard=WordPress ./src",
+		"phpcbf": "phpcbf --standard=WordPress ./src",
+		"lint": "composer run-script phpcs && composer run-script phpcbf"
+	},
+	"require": {
+		"php": ">=5.3.0"
+	},
+	"require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.4.2",
+		"wp-coding-standards/wpcs": "^0.13.1"
+	}
 }
