@@ -14,4 +14,13 @@ namespace Plugin_Name\Admin\Shortcodes;
 use Plugin_Name\Admin\Shortcode;
 
 class Example_Shortcode extends Shortcode {
+	public function render( array $data = [] )
+	{
+		# code...
+	}
+
+	public function get_tag()
+	{
+		return 'example_shortcode';
+	}
 }

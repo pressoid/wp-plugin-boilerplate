@@ -19,7 +19,7 @@ class Example_Page extends Submenu_Page {
 	 *
 	 * @return void
 	 */
-	public function render() {
+	public function render( array $data = [] ) {
 	?>
 		<div class="wrap">
 			<h2><?php echo __( 'Plugin Name', 'plugin-name' ); ?></h2>

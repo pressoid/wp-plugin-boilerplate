@@ -42,7 +42,7 @@ abstract class Service_Provider implements Service_Provider_Interface {
 	}
 
 	/**
-	 * Bootstraps provider to register defined services.
+	 * Bootstraps provider and registers defined services.
 	 *
 	 * @return void
 	 */
@@ -55,11 +55,11 @@ abstract class Service_Provider implements Service_Provider_Interface {
 	 * @return void
 	 */
 	protected function register() {
-		foreach ( apply_filters( $this->get_filter_tag(), $this->services ) as $name ) {
+		foreach ( apply_filters( $this->get_filter(), $this->services ) as $name ) {
 			$service = new $name();
 
 			if ( ! $service instanceof Service_Interface ) {
-				throw new Not_Recognized_Service_Exception( "Class [{$name}] is not recognized as service. Make sure it implements proper interface." );
+				throw new Not_Recognized_Service_Exception( 'Class is not recognized as service. Make sure it implements proper interface.' );
 			}
 
 			$service->register();
@@ -67,20 +67,30 @@ abstract class Service_Provider implements Service_Provider_Interface {
 	}
 
 	/**
+	 * Gets a name of the provider.
+	 *
+	 * @throws \RuntimeException
+	 * @return string
+	 */
+	public function get_name() {
+		throw new RuntimeException( 'Service Provider does not implement `get_name()` method.' );
+	}
+
+	/**
+	 * Gets a tag name for filter of provider's services.
+	 *
+	 * @return string
+	 */
+	public function get_filter() {
+		return Plugin::NAME . '_provider_' . $this->get_name();
+	}
+
+		/**
 	 * Gets collection of defined services.
 	 *
 	 * @return \Plugin_Name\Contracts\Service_Interface[]
 	 */
 	public function get_services() {
 		return $this->services;
-	}
-
-	/**
-	 * Gets name of tag for services filter.
-	 *
-	 * @return string
-	 */
-	public function get_filter_tag() {
-		return Plugin::NAME . '_provider_' . static::NAME;
 	}
 }

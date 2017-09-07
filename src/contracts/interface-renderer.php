@@ -25,7 +25,8 @@ interface Renderer_Interface {
 	/**
 	 * Renders current subject.
 	 *
-	 * @return mixed
+	 * @param  array $data
+	 * @return void
 	 */
-	public function render();
+	public function render( array $data = [] );
 }
