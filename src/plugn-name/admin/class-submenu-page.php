@@ -1,12 +1,11 @@
 <?php
 
-namespace Plugin_Name\Foundation\Admin;
+namespace Plugin_Name\Admin;
 
 use Plugin_Name\Contracts\Service;
 use Plugin_Name\Contracts\Renderer;
 
 abstract class Submenu_Page implements Service, Renderer {
-
 	public function __construct() {
 	}
 

@@ -6,9 +6,7 @@ use Plugin_Name\Contracts\Registrar;
 use Plugin_Name\Contracts\Service_Provider;
 
 final class Plugin implements Registrar {
-
 	const NAME = 'plugin_name';
-
 	public $settings;
 
 	/**

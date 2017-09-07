@@ -2,10 +2,9 @@
 
 namespace Plugin_Name\Admin\Pages;
 
-use Plugin_Name\Foundation\Admin\Submenu_Page;
+use Plugin_Name\Admin\Submenu_Page;
 
 class Settings extends Submenu_Page {
-
 	public function render() {
 	?>
 		<div class="wrap">

@@ -27,7 +27,7 @@ abstract class Service_Provider implements Service_Provider_Interface {
 	 * @return void
 	 */
 	public function register() {
-		foreach ( apply_filters( Plugin::NAME . '/provider/' . static::PROVIDER_KEY, $this->services ) as $service ) {
+		foreach ( apply_filters( Plugin::NAME . '_provider_' . static::PROVIDER_KEY, $this->services ) as $service ) {
 			$service->register();
 		}
 	}

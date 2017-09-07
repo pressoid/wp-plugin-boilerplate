@@ -9,7 +9,7 @@ function plugin_name() {
 	static $plugin = null;
 
 	if ( null === $plugin ) {
-		$plugin = require_once dirname( __DIR__ ) . '/bootstrap/plugin.php';
+		$plugin = require_once __DIR__ . '/bootstrap/plugin.php';
 
 		register_activation_hook( __FILE__, 'plugin_name_activate' );
 		register_deactivation_hook( __FILE__, 'plugin_name_deactivate' );
