@@ -12,7 +12,7 @@
 namespace Plugin_Name;
 
 use Plugin_Name\Contracts\Service_Interface;
-use Plugin_Name\Not_Recognized_Service_Exception;
+use Plugin_Name\Exceptions\Not_Recognized_Service_Exception;
 
 /**
  * Class Service Provider.
@@ -51,8 +51,8 @@ abstract class Service_Provider implements Service_Provider_Interface {
 	/**
 	 * Register services defined in provider.
 	 *
+	 * @throws Not_Recognized_Service_Exception If the service is invalid.
 	 * @return void
-	 * @throws \Plugin_Name\Not_Recognized_Service_Exception If the service is invalid.
 	 */
 	protected function register() {
 		foreach ( apply_filters( $this->get_filter_tag(), $this->services ) as $name ) {

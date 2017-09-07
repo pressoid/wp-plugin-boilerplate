@@ -9,7 +9,7 @@
  * @copyright 2017 Your Name or Company Name
  */
 
-namespace Plugin_Name;
+namespace Plugin_Name\Exceptions;
 
 use InvalidArgumentException;
 

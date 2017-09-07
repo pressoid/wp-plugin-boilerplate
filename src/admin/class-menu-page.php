@@ -16,7 +16,7 @@ use Plugin_Name\Contracts\Renderer_Interface;
 
 abstract class Menu_Page implements Service_Interface, Renderer_Interface {
 	/**
-	 * Adds menu page inside WordPress's admin panel.
+	 * Adds a menu page inside WordPress.
 	 *
 	 * @return void
 	 */

@@ -16,7 +16,7 @@ use Plugin_Name\Contracts\Service_Interface;
 
 abstract class Widget extends WP_Widget implements Service_Interface {
 	/**
-	 * Register widget instance inside WordPress.
+	 * Adds a widget inside WordPress.
 	 *
 	 * @return void
 	 */

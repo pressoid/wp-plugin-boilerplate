@@ -1,17 +1,72 @@
 <?php
+/**
+ * WP Plugin Boilerplate.
+ *
+ * @package   Plugin_Name
+ * @author    Your Name <email@example.com>
+ * @license   GPL-3.0+
+ * @link      http://example.com
+ * @copyright 2017 Your Name or Company Name
+ */
 
+/*
+|--------------------------------------------------------------
+| Create a Service Provider for Pages
+|--------------------------------------------------------------
+|
+| Construct a provider with collection of page services
+| to register. Each service here should extend base
+| `Menu_Page` or `Submenu_Page` classes.
+|
+*/
 $pages = new Plugin_Name\Providers\Pages_Service_Provider(
 	[
-		Plugin_Name\Admin\Pages\Settings::class,
+		Plugin_Name\Admin\Pages\Example_Page::class,
 	]
 );
 
+/*
+|--------------------------------------------------------------
+| Create a Service Provider for Widgets
+|--------------------------------------------------------------
+|
+| Construct a provider with collection of widget
+| services to register. Each service here
+| should extend base `Widget` class.
+|
+*/
 $widgets = new Plugin_Name\Providers\Widgets_Service_Provider(
 	[
-		Plugin_Name\Widget\Example_Widget::class,
+		Plugin_Name\Admin\Widgets\Example_Widget::class,
 	]
 );
 
+/*
+|--------------------------------------------------------------
+| Create a Service Provider for Shortcodes
+|--------------------------------------------------------------
+|
+| Construct a provider with collection of shortcodes
+| services to register. Each service here should
+| extend base `Shortcode` class.
+|
+*/
+$widgets = new Plugin_Name\Providers\Shortcodes_Service_Provider(
+	[
+		Plugin_Name\Admin\Shortcodes\Example_Shortcode::class,
+	]
+);
+
+/*
+|--------------------------------------------------------------
+| Initialize a Plugin
+|--------------------------------------------------------------
+|
+| Finally, construct a plugin itself. We have to pass
+| all previously created service providers so they
+| will be later booted on plugin initialization.
+|
+*/
 return new Plugin_Name\Plugin(
 	[
 		$pages,

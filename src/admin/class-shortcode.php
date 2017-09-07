@@ -12,22 +12,14 @@
 namespace Plugin_Name\Admin;
 
 use Plugin_Name\Contracts\Service_Interface;
-use Plugin_Name\Contracts\Renderer_Interface;
 
-abstract class Submenu_Page implements Service_Interface, Renderer_Interface {
+abstract class Shortcode implements Service_Interface {
 	/**
-	 * Adds a submenu page inside a WordPress.
+	 * Adds a shortcode inside WordPress.
 	 *
 	 * @return void
 	 */
 	public function register() {
-		add_submenu_page(
-			'plugins.php',
-			__( 'Plugin Name', 'plugin-name' ),
-			__( 'Plugin Name', 'plugin-name' ),
-			'manage_options',
-			'plugin-name',
-			[ $this, 'render' ]
-		);
+		add_shortcode( static::NAME, [ $this, 'render' ] );
 	}
 }

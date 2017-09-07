@@ -1,22 +1,32 @@
 <?php
+/**
+ * WP Plugin Boilerplate.
+ *
+ * @package   Plugin_Name
+ * @author    Your Name <email@example.com>
+ * @license   GPL-3.0+
+ * @link      http://example.com
+ * @copyright 2017 Your Name or Company Name
+ */
 
-/*
-|--------------------------------------------------------------------------
-| Example alert
-|--------------------------------------------------------------------------
-*/
 if ( ! defined( 'PLUGIN_NAME_CONSTANS' ) ) {
+	/**
+	 * Displays admin error notice about issue.
+	 *
+	 * @return void
+	 */
 	function plugin_name_compatibility_issue() {
 		?>
 		<div class="notice notice-error">
-			<p><?php _e( '<b>Plugin Name</b> - Issue with description.', 'plugin-name' ); ?></p>
+			<p><?php esc_html_e( '<b>Plugin Name</b> - Issue with description.', 'plugin-name' ); ?></p>
 		</div>
 		<?php
 	}
 	add_action( 'admin_notices', 'plugin_name_compatibility_issue' );
 
+	// Something wrong. Abort.
 	return false;
 }
 
-// Everything is ok. Return positive status.
+// Everything is ok.
 return true;
