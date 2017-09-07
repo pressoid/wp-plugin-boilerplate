@@ -11,6 +11,16 @@
 
 namespace Plugin_Name\Contracts;
 
+/**
+ * Interface of Renderer.
+ *
+ * Subject with ability to render.
+ *
+ * @since   1.0.0
+ *
+ * @package Plugin_Name
+ * @author  Your Name <email@example.com>
+ */
 interface Renderer_Interface {
 	/**
 	 * Renders current subject.

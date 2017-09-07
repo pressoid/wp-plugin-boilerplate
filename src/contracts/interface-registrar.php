@@ -11,6 +11,16 @@
 
 namespace Plugin_Name\Contracts;
 
+/**
+ * Interface of Registrar.
+ *
+ * Subject with ability to register.
+ *
+ * @since   1.0.0
+ *
+ * @package Plugin_Name
+ * @author  Your Name <email@example.com>
+ */
 interface Registrar_Interface {
 	/**
 	 * Registers current subject.

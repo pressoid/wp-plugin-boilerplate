@@ -47,14 +47,14 @@ final class Plugin implements Registrar_Interface {
 	/**
 	 * Collection of providers.
 	 *
-	 * @var Plugin_Name\Contracts\Service_Provider_Interface[]
+	 * @var \Plugin_Name\Contracts\Service_Provider_Interface[]
 	 */
 	protected $providers;
 
 	/**
 	 * Constructs plugin.
 	 *
-	 * @param Plugin_Name\Contracts\Service_Provider_Interface[] $providers
+	 * @param \Plugin_Name\Contracts\Service_Provider_Interface[] $providers Collection of providers to bootstrap.
 	 */
 	public function __construct( array $providers ) {
 		$this->providers = $providers;
@@ -66,8 +66,8 @@ final class Plugin implements Registrar_Interface {
 	 * @return void
 	 */
 	public function register() {
-		foreach ( $this->providers as $porvider ) {
-			$porvider->boot();
+		foreach ( $this->providers as $provider ) {
+			$provider->boot();
 		}
 	}
 
@@ -104,7 +104,7 @@ final class Plugin implements Registrar_Interface {
 	/**
 	 * Gets collection of providers.
 	 *
-	 * @return Plugin_Name\Contracts\Service_Provider_Interface[]
+	 * @return \Plugin_Name\Contracts\Service_Provider_Interface[]
 	 */
 	public function get_providers() {
 		return $this->providers;

@@ -11,5 +11,15 @@
 
 namespace Plugin_Name\Contracts;
 
+/**
+ * Interface of the Service.
+ *
+ * Generic interface for all services.
+ *
+ * @since   1.0.0
+ *
+ * @package Plugin_Name
+ * @author  Your Name <email@example.com>
+ */
 interface Service_Interface extends Registrar_Interface {
 }

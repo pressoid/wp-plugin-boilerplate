@@ -9,17 +9,19 @@
  * @copyright 2017 Your Name or Company Name
  */
 
-namespace Plugin_Name\Contracts;
+namespace Plugin_Name;
+
+use InvalidArgumentException;
 
 /**
- * Interface of the Service Provider.
+ * Exception for invalid service.
  *
- * Generic interface for all providers.
+ * Exception for recognized services.
  *
  * @since   1.0.0
  *
  * @package Plugin_Name
  * @author  Your Name <email@example.com>
  */
-interface Service_Provider_Interface extends Registrar_Interface {
+class Not_Recognized_Service_Exception extends InvalidArgumentException {
 }
