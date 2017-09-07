@@ -24,8 +24,17 @@ if ( ! defined( 'WPINC' ) ) {
 	die();
 }
 
+/**
+ * Bootstrap a plugin. Autoloads files and
+ * checks environment compatibility.
+ */
 require_once 'bootstrap/autoload.php';
 require_once 'bootstrap/compatibility.php';
+
+/**
+ * Include a plugin's specific functions.
+ */
+require_once 'functions.php';
 
 /**
  * Initialize plugin.
