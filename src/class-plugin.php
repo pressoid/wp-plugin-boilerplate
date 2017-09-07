@@ -1,20 +1,44 @@
 <?php
+/**
+ * WP Plugin Boilerplate.
+ *
+ * @package   Plugin_Name
+ * @author    Your Name <email@example.com>
+ * @license   GPL-3.0+
+ * @link      http://example.com
+ * @copyright 2017 Your Name or Company Name
+ */
 
 namespace Plugin_Name;
 
 use Plugin_Name\Contracts\Registrar_Interface;
 use Plugin_Name\Contracts\Service_Provider_Interface;
 
+/**
+ * Class Plugin.
+ *
+ * Main class that registers and bootstraps
+ * all configured services providers.
+ *
+ * @since   1.0.0
+ *
+ * @package Plugin_Name
+ * @author  Your Name <email@example.com>
+ */
 final class Plugin implements Registrar_Interface {
 	/**
 	 * Name of the plugin.
+	 *
+	 * @todo Update plugin name.
 	 *
 	 * @var string
 	 */
 	const NAME = 'plugin_name';
 
 	/**
-	 * Version of the plugin.
+	 * Version number of the plugin.
+	 *
+	 * @todo Update plugin version.
 	 *
 	 * @var string
 	 */
@@ -50,6 +74,8 @@ final class Plugin implements Registrar_Interface {
 	/**
 	 * Procedures that need to be run on plugin activation.
 	 *
+	 * @todo Implement activation logic.
+	 *
 	 * @return void
 	 */
 	public static function activate() {
@@ -58,6 +84,8 @@ final class Plugin implements Registrar_Interface {
 	/**
 	 * Procedures that need to be run on plugin deactivation.
 	 *
+	 * @todo Implement deactivation logic.
+	 *
 	 * @return void
 	 */
 	public static function deactivate() {
@@ -65,6 +93,8 @@ final class Plugin implements Registrar_Interface {
 
 	/**
 	 * Procedures that need to be run on plugin uninstallation.
+	 *
+	 * @todo Implement uninstallation logic.
 	 *
 	 * @return void
 	 */

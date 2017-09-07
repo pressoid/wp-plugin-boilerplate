@@ -3,6 +3,10 @@
 /**
  * Creates and returns a shared instance of the plugin.
  *
+ * @todo Change function name to your unique plugin name.
+ * @todo Change prefixes in the hook functions.
+ * @todo Update namespace in docblock.
+ *
  * @return \Plugin_Name\Plugin
  */
 function plugin_name() {
@@ -24,6 +28,9 @@ function plugin_name() {
  * Handler fired on Plugin_Name activation.
  * Here we also register additional uninstall hook.
  *
+ * @todo Change prefix of the function.
+ * @todo Update namespace.
+ *
  * @return void
  */
 function plugin_name_activate() {
@@ -35,6 +42,9 @@ function plugin_name_activate() {
 /**
  * Handler fired on Plugin_Name deactivation.
  *
+ * @todo Change prefix of the function.
+ * @todo Update namespace.
+ *
  * @return void
  */
 function plugin_name_deactivate() {
@@ -43,6 +53,9 @@ function plugin_name_deactivate() {
 
 /**
  * Handler fired on Plugin_Name uninstallation.
+ *
+ * @todo Change prefix of the function.
+ * @todo Update namespace.
  *
  * @return void
  */

@@ -1,6 +1,6 @@
 {
 	"name": "jedrzejchalubek/wp-plugin-boilerplate",
-	"description": "WordPress Plugin Boilerplate.",
+	"description": "Plugin Boilerplate for WordPress.",
 	"keywords": ["wordpress", "wordpress-plugin", "wordpress-widget"],
 	"homepage": "https://github.com/jedrzejchalubek/wp-plugin-boilerplate",
 	"license": "MIT",
@@ -13,8 +13,8 @@
 		}
 	],
 	"scripts": {
-		"phpcs": "phpcs --standard=WordPress ./src",
-		"phpcbf": "phpcbf --standard=WordPress ./src",
+		"phpcs": "phpcs --standard=WordPress ./**/*.php",
+		"phpcbf": "phpcbf --standard=WordPress ./**/*.php",
 		"lint": "composer run-script phpcs && composer run-script phpcbf"
 	},
 	"require": {
