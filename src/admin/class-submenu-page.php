@@ -35,7 +35,7 @@ abstract class Submenu_Page extends Page {
 			$this->get_title(),
 			$this->get_menu_title(),
 			$this->get_capability(),
-			Plugin::NAME,
+			$this->get_slug(),
 			[ $this, 'render' ]
 		);
 	}

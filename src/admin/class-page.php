@@ -34,6 +34,13 @@ abstract class Page implements Service_Interface, Renderer_Interface {
 	abstract public function get_title();
 
 	/**
+	 * Gets slug of the menu page.
+	 *
+	 * @return string
+	 */
+	abstract public function get_slug();
+
+	/**
 	 * Gets title of the page in a menu.
 	 *
 	 * @return string

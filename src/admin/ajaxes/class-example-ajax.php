@@ -29,7 +29,7 @@ class Example_Ajax extends Ajax {
 	 *
 	 * @return void
 	 */
-	public function render( array $data = [] )
+	public function render( $data = [] )
 	{
 		return json_encode( $data );
 	}

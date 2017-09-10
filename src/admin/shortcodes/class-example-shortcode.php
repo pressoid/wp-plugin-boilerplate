@@ -30,7 +30,7 @@ class Example_Shortcode extends Shortcode {
 	 * @param  array  $data
 	 * @return void
 	 */
-	public function render( array $data = [] )
+	public function render( $data = [] )
 	{
 		?>
 			<h3>Example Shortcode</h3>

@@ -30,7 +30,7 @@ class Example_Page extends Menu_Page {
 	 *
 	 * @return void
 	 */
-	public function render( array $data = [] ) {
+	public function render( $data = [] ) {
 	?>
 		<div class="wrap">
 			<h2><?php echo $this->get_title(); ?></h2>
@@ -49,5 +49,15 @@ class Example_Page extends Menu_Page {
 	 */
 	public function get_title() {
 		return __( 'Menu Page', Plugin::NAME );
+	}
+
+	/**
+	 * Gets slug of the menu page.
+	 *
+	 * @return string
+	 */
+	public function get_slug()
+	{
+		return Plugin::NAME;
 	}
 }

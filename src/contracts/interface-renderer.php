@@ -28,5 +28,5 @@ interface Renderer_Interface {
 	 * @param  array $data
 	 * @return void
 	 */
-	public function render( array $data = [] );
+	public function render( $data = [] );
 }

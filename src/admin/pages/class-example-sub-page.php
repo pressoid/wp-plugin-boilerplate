@@ -30,7 +30,7 @@ class Example_Sub_Page extends Submenu_Page {
 	 *
 	 * @return void
 	 */
-	public function render( array $data = [] ) {
+	public function render( $data = [] ) {
 	?>
 		<div class="wrap">
 			<h2><?php echo $this->get_title(); ?></h2>
@@ -49,5 +49,25 @@ class Example_Sub_Page extends Submenu_Page {
 	 */
 	public function get_title() {
 		return __( 'Submenu Page', Plugin::NAME );
+	}
+
+	/**
+	 * Gets name of the parent menu page.
+	 *
+	 * @return string
+	 */
+	public function get_parent()
+	{
+		return Plugin::NAME;
+	}
+
+	/**
+	 * Gets slug of the menu page.
+	 *
+	 * @return string
+	 */
+	public function get_slug()
+	{
+		return Plugin::NAME . '-submenu-page';
 	}
 }

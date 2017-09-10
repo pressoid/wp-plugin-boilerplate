@@ -33,7 +33,7 @@ final class Plugin implements Registrar_Interface {
 	 *
 	 * @var string
 	 */
-	const NAME = 'plugin_name';
+	const NAME = 'plugin-name';
 
 	/**
 	 * Version number of the plugin.
