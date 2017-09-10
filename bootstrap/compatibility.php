@@ -20,7 +20,7 @@ if ( ! defined( 'PLUGIN_NAME_CONSTANS' ) ) {
 	function plugin_name_compatibility_issue() {
 		?>
 		<div class="notice notice-error">
-			<p><?php esc_html_e( '<b>Plugin Name</b> - Issue with description.', Plugin::name ); ?></p>
+			<p><?php esc_html_e( '<b>Plugin Name</b> - Issue with description.', Plugin::NAME ); ?></p>
 		</div>
 		<?php
 	}

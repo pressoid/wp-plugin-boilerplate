@@ -11,9 +11,9 @@
 
 namespace Plugin_Name\Admin\Pages;
 
-use Plugin_Name\Admin\Menu_Page;
+use Plugin_Name\Admin\Submenu_Page;
 
-class Example_Page extends Menu_Page {
+class Example_Sub_Page extends Submenu_Page {
 	/**
 	 * Render settings page content.
 	 *
@@ -26,17 +26,17 @@ class Example_Page extends Menu_Page {
 
 			<?php settings_errors(); ?>
 
-			<!-- Page inputs goes here. -->
+			<!-- Subpage inputs goes here. -->
 		</div>
 	<?php
 	}
 
 	/**
-	 * Gets title of the page.
+	 * Gets title of the sub page.
 	 *
 	 * @return string
 	 */
 	public function get_title() {
-		return __( 'Menu Page', Plugin::NAME );
+		return __( 'Submenu Page', Plugin::NAME );
 	}
 }

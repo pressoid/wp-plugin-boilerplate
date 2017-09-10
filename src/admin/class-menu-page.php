@@ -24,7 +24,7 @@ use Plugin_Name\Contracts\Renderer_Interface;
  * @package Plugin_Name
  * @author  Your Name <email@example.com>
  */
-abstract class Menu_Page implements Service_Interface, Renderer_Interface {
+abstract class Menu_Page extends Page implements Service_Interface, Renderer_Interface {
 	/**
 	 * Adds a menu page inside WordPress.
 	 *
@@ -32,10 +32,10 @@ abstract class Menu_Page implements Service_Interface, Renderer_Interface {
 	 */
 	public function register() {
 		add_menu_page(
-			__( 'Unsub List', 'textdomain' ),
-			__( 'Unsub Emails','textdomain' ),
-			'manage_options',
-			'plugin-name',
+			$this->get_title(),
+			$this->get_menu_title(),
+			$this->get_capability(),
+			Plugin::NAME,
 			[ $this, 'render' ]
 		);
 	}
