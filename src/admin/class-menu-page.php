@@ -36,7 +36,29 @@ abstract class Menu_Page extends Page implements Service_Interface, Renderer_Int
 			$this->get_menu_title(),
 			$this->get_capability(),
 			Plugin::NAME,
-			[ $this, 'render' ]
+			[ $this, 'render' ],
+			$this->get_icon(),
+			$this->get_position()
 		);
+	}
+
+	/**
+	 * Gets icon for the menu.
+	 *
+	 * @return string
+	 */
+	public function get_icon()
+	{
+		return 'dashicons-admin-generic';
+	}
+
+	/**
+	 * Gets position number.
+	 *
+	 * @return null|integer
+	 */
+	public function get_position()
+	{
+		return;
 	}
 }
