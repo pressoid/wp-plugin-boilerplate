@@ -14,11 +14,24 @@ namespace Plugin_Name\Admin\Shortcodes;
 use Plugin_Name\Admin\Shortcode;
 
 class Example_Shortcode extends Shortcode {
+	/**
+	 * Renders shortcode markup.
+	 *
+	 * @param  array  $data
+	 * @return void
+	 */
 	public function render( array $data = [] )
 	{
-		# code...
+		?>
+			<h3>Example Shortcode</h3>
+		<?php
 	}
 
+	/**
+	 * Gets the tag name for the shortcode.
+	 *
+	 * @return string
+	 */
 	public function get_tag()
 	{
 		return 'example_shortcode';

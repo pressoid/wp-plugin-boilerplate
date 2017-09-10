@@ -85,7 +85,7 @@ abstract class Service_Provider implements Service_Provider_Interface {
 		return Plugin::NAME . '_provider_' . $this->get_name();
 	}
 
-		/**
+	/**
 	 * Gets collection of defined services.
 	 *
 	 * @return \Plugin_Name\Contracts\Service_Interface[]
