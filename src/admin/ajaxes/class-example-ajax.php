@@ -14,9 +14,9 @@ namespace Plugin_Name\Admin\Ajaxes;
 use Plugin_Name\Admin\Ajax;
 
 /**
- * Class Example Ajax.
+ * Class Example Ahax.
  *
- * Main class for ajaxes services to inherit.
+ * An example of concrete ajax implementation.
  *
  * @since   1.0.0
  *

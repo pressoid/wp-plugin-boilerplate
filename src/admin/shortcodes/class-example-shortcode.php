@@ -13,6 +13,16 @@ namespace Plugin_Name\Admin\Shortcodes;
 
 use Plugin_Name\Admin\Shortcode;
 
+/**
+ * Class Example Shortcode.
+ *
+ * An example of concrete shortcode implementation.
+ *
+ * @since   1.0.0
+ *
+ * @package Plugin_Name
+ * @author  Your Name <email@example.com>
+ */
 class Example_Shortcode extends Shortcode {
 	/**
 	 * Renders shortcode markup.

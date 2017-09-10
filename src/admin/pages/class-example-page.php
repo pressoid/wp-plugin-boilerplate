@@ -13,6 +13,16 @@ namespace Plugin_Name\Admin\Pages;
 
 use Plugin_Name\Admin\Menu_Page;
 
+/**
+ * Class Example Menu Page.
+ *
+ * An example of concrete menu page implementation.
+ *
+ * @since   1.0.0
+ *
+ * @package Plugin_Name
+ * @author  Your Name <email@example.com>
+ */
 class Example_Page extends Menu_Page {
 	/**
 	 * Render settings page content.

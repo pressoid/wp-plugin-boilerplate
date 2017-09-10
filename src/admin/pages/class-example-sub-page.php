@@ -13,6 +13,16 @@ namespace Plugin_Name\Admin\Pages;
 
 use Plugin_Name\Admin\Submenu_Page;
 
+/**
+ * Class Example Submenu Page.
+ *
+ * An example of concrete submenu page implementation.
+ *
+ * @since   1.0.0
+ *
+ * @package Plugin_Name
+ * @author  Your Name <email@example.com>
+ */
 class Example_Sub_Page extends Submenu_Page {
 	/**
 	 * Render settings page content.
