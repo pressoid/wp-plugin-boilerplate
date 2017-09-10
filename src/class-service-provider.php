@@ -12,6 +12,7 @@
 namespace Plugin_Name;
 
 use Plugin_Name\Contracts\Service_Interface;
+use Plugin_Name\Contracts\Service_Provider_Interface;
 use Plugin_Name\Exceptions\Not_Recognized_Service_Exception;
 
 /**
@@ -54,12 +55,12 @@ abstract class Service_Provider implements Service_Provider_Interface {
 	 * @throws Not_Recognized_Service_Exception If the service is invalid.
 	 * @return void
 	 */
-	protected function register() {
+	public function register() {
 		foreach ( apply_filters( $this->get_filter(), $this->services ) as $name ) {
 			$service = new $name();
 
 			if ( ! $service instanceof Service_Interface ) {
-				throw new Not_Recognized_Service_Exception( 'Class is not recognized as service. Make sure it implements proper interface.' );
+				throw new Not_Recognized_Service_Exception( "Class [{$name}] is not recognized as service. Make sure it implements proper interface." );
 			}
 
 			$service->register();

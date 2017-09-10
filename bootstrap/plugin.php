@@ -22,6 +22,7 @@
 $pages = new Plugin_Name\Providers\Pages_Service_Provider(
 	[
 		Plugin_Name\Admin\Pages\Example_Page::class,
+		Plugin_Name\Admin\Pages\Example_Sub_Page::class
 	]
 );
 

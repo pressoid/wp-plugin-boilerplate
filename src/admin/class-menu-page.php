@@ -11,8 +11,7 @@
 
 namespace Plugin_Name\Admin;
 
-use Plugin_Name\Contracts\Service_Interface;
-use Plugin_Name\Contracts\Renderer_Interface;
+use Plugin_Name\Plugin;
 
 /**
  * Class Menu Page.
@@ -24,7 +23,7 @@ use Plugin_Name\Contracts\Renderer_Interface;
  * @package Plugin_Name
  * @author  Your Name <email@example.com>
  */
-abstract class Menu_Page extends Page implements Service_Interface, Renderer_Interface {
+abstract class Menu_Page extends Page {
 	/**
 	 * Adds a menu page inside WordPress.
 	 *

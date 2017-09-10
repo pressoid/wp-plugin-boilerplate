@@ -12,6 +12,8 @@
 namespace Plugin_Name\Admin;
 
 use Plugin_Name\Contracts\Registrar_Interface;
+use Plugin_Name\Contracts\Renderer_Interface;
+use Plugin_Name\Contracts\Service_Interface;
 
 /**
  * Class Page.
@@ -23,7 +25,7 @@ use Plugin_Name\Contracts\Registrar_Interface;
  * @package Plugin_Name
  * @author  Your Name <email@example.com>
  */
-abstract class Page implements Registrar_Interface {
+abstract class Page implements Service_Interface, Renderer_Interface {
 	/**
 	 * Gets title of the page.
 	 *

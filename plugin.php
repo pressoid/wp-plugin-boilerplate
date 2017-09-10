@@ -24,21 +24,25 @@ if ( ! defined( 'WPINC' ) ) {
 	die();
 }
 
-/**
- * Bootstrap a plugin. Autoloads files and
- * checks environment compatibility.
- */
-require_once 'bootstrap/autoload.php';
-require_once 'bootstrap/compatibility.php';
+define('PLUGIN_NAME_CONSTANS', true);
 
 /**
- * Include a plugin's specific functions.
+ * Bootstrap a plugin.
+ * Autoload plugin's files and functions.
  */
+require_once 'bootstrap/autoload.php';
 require_once 'functions.php';
+
+/**
+ * Checks environment compatibilities.
+ */
+$ok = require_once 'bootstrap/compatibility.php';
 
 /**
  * Initialize plugin.
  *
  * @todo Change function name to your unique plugin name.
  */
-plugin_name();
+if ($ok) {
+	plugin_name();
+}

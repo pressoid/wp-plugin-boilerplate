@@ -11,6 +11,7 @@
 
 namespace Plugin_Name\Admin\Pages;
 
+use Plugin_Name\Plugin;
 use Plugin_Name\Admin\Submenu_Page;
 
 /**

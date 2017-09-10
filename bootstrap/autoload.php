@@ -54,7 +54,7 @@ spl_autoload_register(
 			}
 		}
 
-		/**
+	/**
 	 * Find the fully qualified path to the class file by iterating through the $file_path array.
 	 * We ignore the first index since it's always the top-level package. The last index is always
 	 * the file so we append that at the end.
@@ -62,6 +62,9 @@ spl_autoload_register(
 		$fully_qualified_path = trailingslashit(
 			dirname( dirname( __FILE__ ) )
 		);
+
+
+		$fully_qualified_path .= 'src/';
 
 		for ( $i = 1; $i < count( $file_path ) - 1; $i++ ) {
 			$dir = strtolower( $file_path[ $i ] );

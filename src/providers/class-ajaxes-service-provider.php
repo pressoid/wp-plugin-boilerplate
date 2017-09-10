@@ -11,7 +11,7 @@
 
 namespace Plugin_Name\Providers;
 
-use Plugin_Name\Contracts\Service_Provider;
+use Plugin_Name\Service_Provider;
 
 class Ajaxes_Service_Provider extends Service_Provider {
 	/**

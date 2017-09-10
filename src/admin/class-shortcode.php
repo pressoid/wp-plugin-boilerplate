@@ -11,6 +11,7 @@
 
 namespace Plugin_Name\Admin;
 
+use Plugin_Name\Contracts\Renderer_Interface;
 use Plugin_Name\Contracts\Service_Interface;
 
 /**

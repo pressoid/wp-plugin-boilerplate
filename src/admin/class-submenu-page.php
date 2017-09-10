@@ -11,8 +11,7 @@
 
 namespace Plugin_Name\Admin;
 
-use Plugin_Name\Contracts\Renderer_Interface;
-use Plugin_Name\Contracts\Service_Interface;
+use Plugin_Name\Plugin;
 
 /**
  * Class Submenu Page.
@@ -24,7 +23,7 @@ use Plugin_Name\Contracts\Service_Interface;
  * @package Plugin_Name
  * @author  Your Name <email@example.com>
  */
-abstract class Submenu_Page extends Page implements Service_Interface, Renderer_Interface {
+abstract class Submenu_Page extends Page {
 	/**
 	 * Adds a submenu page inside a WordPress.
 	 *
@@ -35,7 +34,7 @@ abstract class Submenu_Page extends Page implements Service_Interface, Renderer_
 			$this->get_parent(),
 			$this->get_title(),
 			$this->get_menu_title(),
-			$this->capability(),
+			$this->get_capability(),
 			Plugin::NAME,
 			[ $this, 'render' ]
 		);
