@@ -37,6 +37,8 @@ class Example_Page extends Menu_Page {
 
 			<?php settings_errors(); ?>
 
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, consectetur sed debitis, libero ut obcaecati ipsa.</p>
+
 			<!-- Page inputs goes here. -->
 		</div>
 	<?php

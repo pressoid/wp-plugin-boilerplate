@@ -37,6 +37,8 @@ class Example_Sub_Page extends Submenu_Page {
 
 			<?php settings_errors(); ?>
 
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, consectetur sed debitis, libero ut obcaecati ipsa.</p>
+
 			<!-- Subpage inputs goes here. -->
 		</div>
 	<?php
