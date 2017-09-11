@@ -46,7 +46,7 @@ abstract class Script extends Asset {
 			);
 		}
 
-    	wp_enqueue_script( $this->get_tag() );
+		wp_enqueue_script( $this->get_tag() );
 	}
 
 	/**

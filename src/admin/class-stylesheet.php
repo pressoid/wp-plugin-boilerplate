@@ -36,7 +36,7 @@ abstract class Stylesheet extends Asset {
 			$this->get_media()
 		);
 
-    	wp_enqueue_style( $this->get_tag() );
+		wp_enqueue_style( $this->get_tag() );
 	}
 
 	/**
