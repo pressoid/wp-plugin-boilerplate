@@ -13,9 +13,19 @@ namespace Plugin_Name\Providers;
 
 use Plugin_Name\Service_Provider;
 
+/**
+ * Class Ajaxes Service Provider.
+ *
+ * Registers defined ajax services.
+ *
+ * @since   1.0.0
+ *
+ * @package Plugin_Name
+ * @author  Your Name <email@example.com>
+ */
 class Ajaxes_Service_Provider extends Service_Provider {
 	/**
-	 * Registers ajaxes services at `init` hook.
+	 * Registers ajax services at `init` hook.
 	 *
 	 * @return void
 	 */

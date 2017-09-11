@@ -13,9 +13,19 @@ namespace Plugin_Name\Providers;
 
 use Plugin_Name\Service_Provider;
 
+/**
+ * Class Shortcodes Service Provider.
+ *
+ * Registers defined shortcode services.
+ *
+ * @since   1.0.0
+ *
+ * @package Plugin_Name
+ * @author  Your Name <email@example.com>
+ */
 class Shortcodes_Service_Provider extends Service_Provider {
 	/**
-	 * Registers shortcodes services at `init` hook.
+	 * Registers shortcode services at `init` hook.
 	 *
 	 * @return void
 	 */

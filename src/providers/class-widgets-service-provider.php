@@ -13,9 +13,19 @@ namespace Plugin_Name\Providers;
 
 use Plugin_Name\Service_Provider;
 
+/**
+ * Class Widgets Service Provider.
+ *
+ * Registers defined widget services.
+ *
+ * @since   1.0.0
+ *
+ * @package Plugin_Name
+ * @author  Your Name <email@example.com>
+ */
 class Widgets_Service_Provider extends Service_Provider {
 	/**
-	 * Registers widgets services at `widgets_init` hook.
+	 * Registers widget services at `widgets_init` hook.
 	 *
 	 * @return void
 	 */

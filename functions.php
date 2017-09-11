@@ -62,3 +62,35 @@ function plugin_name_deactivate() {
 function plugin_name_uninstall() {
 	Plugin_Name\Plugin::uninstall();
 }
+
+/**
+ * Gets path to the plugin's main directory.
+ *
+ * @param string $path A relative path to the base.
+ * @return string
+ */
+function plugin_name_dir( $path = '' ) {
+	$base = plugin_dir_path( __FILE__ );
+
+	if ( ! empty( $path ) ) {
+		return "{$base}{$path}";
+	}
+
+	return $base;
+}
+
+/**
+ * Gets url to the plugin's main directory.
+ *
+ * @param string $path A relative path to the base.
+ * @return string
+ */
+function plugin_name_url( $path = '' ) {
+	$base = plugin_dir_url( __FILE__ );
+
+	if ( ! empty( $path ) ) {
+		return "{$base}{$path}";
+	}
+
+	return $base;
+}

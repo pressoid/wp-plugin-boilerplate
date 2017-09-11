@@ -28,6 +28,39 @@ $pages = new Plugin_Name\Providers\Pages_Service_Provider(
 
 /*
 |--------------------------------------------------------------
+| Create a Service Provider for Assets
+|--------------------------------------------------------------
+|
+| Construct a provider with collection of asset services
+| to register. Each service here should extend base
+| `Script` or `Stylesheet` classes.
+|
+*/
+$assets = new Plugin_Name\Providers\Assets_Service_Provider(
+	[
+		Plugin_Name\Admin\Assets\Example_Script::class,
+		Plugin_Name\Admin\Assets\Example_Stylesheet::class
+	]
+);
+
+/*
+|--------------------------------------------------------------
+| Create a Service Provider for Ajaxes
+|--------------------------------------------------------------
+|
+| Construct a provider with collection of shortcodes
+| services to register. Each service here should
+| extend base `Ajax` class.
+|
+*/
+$ajaxes = new Plugin_Name\Providers\Ajaxes_Service_Provider(
+	[
+		Plugin_Name\Admin\Ajaxes\Example_Ajax::class,
+	]
+);
+
+/*
+|--------------------------------------------------------------
 | Create a Service Provider for Widgets
 |--------------------------------------------------------------
 |
@@ -60,22 +93,6 @@ $shortcodes = new Plugin_Name\Providers\Shortcodes_Service_Provider(
 
 /*
 |--------------------------------------------------------------
-| Create a Service Provider for Ajaxes
-|--------------------------------------------------------------
-|
-| Construct a provider with collection of shortcodes
-| services to register. Each service here should
-| extend base `Ajax` class.
-|
-*/
-$ajaxes = new Plugin_Name\Providers\Ajaxes_Service_Provider(
-	[
-		Plugin_Name\Admin\Ajaxes\Example_Ajax::class,
-	]
-);
-
-/*
-|--------------------------------------------------------------
 | Initialize a Plugin
 |--------------------------------------------------------------
 |
@@ -87,6 +104,7 @@ $ajaxes = new Plugin_Name\Providers\Ajaxes_Service_Provider(
 return new Plugin_Name\Plugin(
 	[
 		$pages,
+		$assets,
 		$ajaxes,
 		$widgets,
 		$shortcodes,

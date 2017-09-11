@@ -14,23 +14,23 @@ namespace Plugin_Name\Providers;
 use Plugin_Name\Service_Provider;
 
 /**
- * Class Pages Service Provider.
+ * Class Assets Service Provider.
  *
- * Registers defined page services.
+ * Registers defined asset services.
  *
  * @since   1.0.0
  *
  * @package Plugin_Name
  * @author  Your Name <email@example.com>
  */
-class Pages_Service_Provider extends Service_Provider {
+class Assets_Service_Provider extends Service_Provider {
 	/**
-	 * Registers page services at `admin_menu` hook.
+	 * Registers asset services at `wp_enqueue_scripts` hook.
 	 *
 	 * @return void
 	 */
 	public function boot() {
-		add_action( 'admin_menu', [ $this, 'register' ] );
+		add_action( 'wp_enqueue_scripts', [ $this, 'register' ] );
 	}
 
 	/**
@@ -39,6 +39,6 @@ class Pages_Service_Provider extends Service_Provider {
 	 * @return string
 	 */
 	public function get_name() {
-		return 'pages';
+		return 'assets';
 	}
 }
