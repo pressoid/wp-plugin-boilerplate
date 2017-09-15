@@ -26,12 +26,19 @@ use Plugin_Name\Admin\Script;
  */
 class Example_Script extends Script {
 	/**
+	 * Tag name for the script.
+	 *
+	 * @var string
+	 */
+	const NAME = 'example-script';
+
+	/**
 	 * Gets the filepath of the script.
 	 *
 	 * @return string
 	 */
 	public function get_filepath() {
-		return plugin_name_url('resources/assets/plugin.js');
+		return plugin_name_url( 'resources/assets/plugin.js' );
 	}
 
 	/**
@@ -40,6 +47,6 @@ class Example_Script extends Script {
 	 * @return string
 	 */
 	public function get_tag() {
-		return Plugin::NAME;
+		return static::NAME;
 	}
 }
