@@ -24,7 +24,14 @@ if ( ! defined( 'WPINC' ) ) {
 	die();
 }
 
-define('PLUGIN_NAME_CONSTANS', true);
+/**
+ * This section setups plugin specific global constans.
+ * They fallback to defaults only if they are
+ * not already defined by developer.
+ */
+if ( ! defined( 'PLUGIN_NAME_CONSTANS' )) {
+	define( 'PLUGIN_NAME_CONSTANS', true );
+}
 
 /**
  * Bootstrap a plugin.
@@ -43,6 +50,6 @@ $ok = require_once 'bootstrap/compatibility.php';
  *
  * @todo Change function name to your unique plugin name.
  */
-if ($ok) {
+if ( $ok ) {
 	plugin_name();
 }
