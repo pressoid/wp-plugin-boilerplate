@@ -28,6 +28,6 @@ abstract class Lazy_Stylesheet extends Stylesheet {
 	 * @return void
 	 */
 	public function register() {
-		$this->registerStyle();
+		$this->register_style();
 	}
 }

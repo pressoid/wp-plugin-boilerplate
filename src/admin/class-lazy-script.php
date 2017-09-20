@@ -30,7 +30,7 @@ abstract class Lazy_Script extends Script {
 	 * @return void
 	 */
 	public function register() {
-		$this->registerScript();
-		$this->localizeScript();
+		$this->register_script();
+		$this->localize_script();
 	}
 }
