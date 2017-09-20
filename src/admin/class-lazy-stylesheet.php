@@ -28,12 +28,6 @@ abstract class Lazy_Stylesheet extends Stylesheet {
 	 * @return void
 	 */
 	public function register() {
-		wp_register_style(
-			$this->get_tag(),
-			$this->get_filepath(),
-			$this->get_dependencies(),
-			$this->get_version(),
-			$this->get_media()
-		);
+		$this->registerStyle();
 	}
 }

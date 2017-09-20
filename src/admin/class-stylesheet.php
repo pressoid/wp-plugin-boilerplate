@@ -28,6 +28,17 @@ abstract class Stylesheet extends Asset {
 	 * @return void
 	 */
 	public function register() {
+		$this->registerStyle();
+		$this->enqueueStyle();
+	}
+
+	/**
+	 * Registers a style.
+	 *
+	 * @return void
+	 */
+	protected function registerStyle()
+	{
 		wp_register_style(
 			$this->get_tag(),
 			$this->get_filepath(),
@@ -35,7 +46,15 @@ abstract class Stylesheet extends Asset {
 			$this->get_version(),
 			$this->get_media()
 		);
+	}
 
+	/**
+	 * Enqueues a style.
+	 *
+	 * @return void
+	 */
+	protected function enququeStyle()
+	{
 		wp_enqueue_style( $this->get_tag() );
 	}
 

@@ -30,20 +30,7 @@ abstract class Lazy_Script extends Script {
 	 * @return void
 	 */
 	public function register() {
-		wp_register_script(
-			$this->get_tag(),
-			$this->get_filepath(),
-			$this->get_dependencies(),
-			$this->get_version(),
-			$this->in_footer()
-		);
-
-		if ( ! empty( $this->get_localization() ) ) {
-			wp_localize_script(
-				$this->get_tag(),
-				$this->get_variable(),
-				$this->get_localization()
-			);
-		}
+		$this->registerScript();
+		$this->localizeScript();
 	}
 }

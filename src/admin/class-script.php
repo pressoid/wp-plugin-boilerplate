@@ -30,6 +30,17 @@ abstract class Script extends Asset {
 	 * @return void
 	 */
 	public function register() {
+		$this->registerScript();
+		$this->localizeScript();
+		$this->enqueueScript();
+	}
+
+	/**
+	 * Registers a script.
+	 *
+	 * @return void
+	 */
+	protected function registerScript() {
 		wp_register_script(
 			$this->get_tag(),
 			$this->get_filepath(),
@@ -37,7 +48,14 @@ abstract class Script extends Asset {
 			$this->get_version(),
 			$this->in_footer()
 		);
+	}
 
+	/**
+	 * Localizes a script if it has any localizaction data.
+	 *
+	 * @return void
+	 */
+	protected function localizeScript() {
 		if ( ! empty( $this->get_localization() ) ) {
 			wp_localize_script(
 				$this->get_tag(),
@@ -45,7 +63,14 @@ abstract class Script extends Asset {
 				$this->get_localization()
 			);
 		}
+	}
 
+	/**
+	 * Enquques a script.
+	 *
+	 * @return void
+	 */
+	protected function enqueueScript() {
 		wp_enqueue_script( $this->get_tag() );
 	}
 
