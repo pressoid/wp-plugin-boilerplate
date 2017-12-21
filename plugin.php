@@ -29,9 +29,8 @@ if ( ! defined( 'WPINC' ) ) {
  * They fallback to defaults only if they are
  * not already defined by developer.
  */
-if ( ! defined( 'PLUGIN_NAME_CONSTANS' )) {
-	define( 'PLUGIN_NAME_CONSTANS', true );
-}
+define( 'PLUGIN_NAME_URL', plugin_dir_url( __FILE__ ) );
+define( 'PLUGIN_NAME_PATH', plugin_dir_path( __FILE__ ) );
 
 /**
  * Bootstrap a plugin.

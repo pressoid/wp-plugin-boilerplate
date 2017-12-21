@@ -15,8 +15,9 @@ function plugin_name() {
 	if ( null === $plugin ) {
 		$plugin = require_once __DIR__ . '/bootstrap/plugin.php';
 
-		register_activation_hook( __FILE__, 'plugin_name_activate' );
-		register_deactivation_hook( __FILE__, 'plugin_name_deactivate' );
+		register_activation_hook( PLUGIN_NAME_PATH, 'plugin_name_activate' );
+		register_deactivation_hook( PLUGIN_NAME_PATH, 'plugin_name_deactivate' );
+		register_uninstall_hook( PLUGIN_NAME_PATH, 'plugin_name_uninstall' );
 
 		$plugin->register();
 	}
@@ -35,8 +36,6 @@ function plugin_name() {
  */
 function plugin_name_activate() {
 	Plugin_Name\Plugin::activate();
-
-	register_uninstall_hook( __FILE__, 'plugin_name_uninstall' );
 }
 
 /**
@@ -66,31 +65,33 @@ function plugin_name_uninstall() {
 /**
  * Gets path to the plugin's main directory.
  *
+ * @todo Change prefix of the function.
+ * @todo Update name of the used constans.
+ *
  * @param string $path A relative path to the base.
  * @return string
  */
 function plugin_name_dir( $path = '' ) {
-	$base = plugin_dir_path( __FILE__ );
-
 	if ( ! empty( $path ) ) {
-		return "{$base}{$path}";
+		return PLUGIN_NAME_PATH . $path;
 	}
 
-	return $base;
+	return PLUGIN_NAME_PATH;
 }
 
 /**
  * Gets url to the plugin's main directory.
  *
+ * @todo Change prefix of the function.
+ * @todo Update name of the used constans.
+ *
  * @param string $path A relative path to the base.
  * @return string
  */
 function plugin_name_url( $path = '' ) {
-	$base = plugin_dir_url( __FILE__ );
-
 	if ( ! empty( $path ) ) {
-		return "{$base}{$path}";
+		return PLUGIN_NAME_URL . $path;
 	}
 
-	return $base;
+	return PLUGIN_NAME_URL;
 }
