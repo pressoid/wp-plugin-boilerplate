@@ -2,6 +2,8 @@
 /**
  * WP Plugin Boilerplate.
  *
+ * @todo  Fill up plugin's meta information in this file header.
+ *
  * @package   Plugin_Name
  * @author    Your Name <email@example.com>
  * @license   GPL-3.0+
@@ -10,7 +12,7 @@
  *
  * @wordpress-plugin
  * Plugin Name: WP Plugin Boilerplate
- * Plugin URI:  http://example.com
+ * Plugin URI:  http://github.com/jedrzejchalubek/wp-plugin-boilerplate
  * Description: Plugin Boilerplate for WordPress.
  * Version:     1.0.0
  * Author:      Your Name <email@example.com>
@@ -25,16 +27,16 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /**
- * This section setups plugin specific global constans.
- * They fallback to defaults only if they are
- * not already defined by developer.
+ * This section setups plugin specific constans.
+ * Fell free to define here your own variables as needed.
+ *
+ * @todo Change prefix of the constans to your unique plugin name.
  */
 define( 'PLUGIN_NAME_URL', plugin_dir_url( __FILE__ ) );
 define( 'PLUGIN_NAME_PATH', plugin_dir_path( __FILE__ ) );
 
 /**
- * Bootstrap a plugin.
- * Autoload plugin's files and functions.
+ * Bootstrap and autoload plugin's files and functions.
  */
 require_once 'bootstrap/autoload.php';
 require_once 'functions.php';

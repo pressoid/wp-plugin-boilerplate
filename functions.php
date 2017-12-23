@@ -4,8 +4,8 @@
  * Creates and returns a shared instance of the plugin.
  *
  * @todo Change function name to your unique plugin name.
- * @todo Change prefixes in the hook functions.
- * @todo Update namespace in docblock.
+ * @todo Update prefixes in the hook functions.
+ * @todo Update namespace in a docblock.
  *
  * @return \Plugin_Name\Plugin
  */
@@ -15,9 +15,9 @@ function plugin_name() {
 	if ( null === $plugin ) {
 		$plugin = require_once __DIR__ . '/bootstrap/plugin.php';
 
+		register_uninstall_hook( PLUGIN_NAME_PATH, 'plugin_name_uninstall' );
 		register_activation_hook( PLUGIN_NAME_PATH, 'plugin_name_activate' );
 		register_deactivation_hook( PLUGIN_NAME_PATH, 'plugin_name_deactivate' );
-		register_uninstall_hook( PLUGIN_NAME_PATH, 'plugin_name_uninstall' );
 
 		$plugin->register();
 	}
@@ -26,11 +26,10 @@ function plugin_name() {
 }
 
 /**
- * Handler fired on Plugin_Name activation.
- * Here we also register additional uninstall hook.
+ * Handler for plugin's activation hook.
  *
- * @todo Change prefix of the function.
- * @todo Update namespace.
+ * @todo Update prefix of the function.
+ * @todo Update namespace of the `Plugin::activate` method.
  *
  * @return void
  */
@@ -39,10 +38,10 @@ function plugin_name_activate() {
 }
 
 /**
- * Handler fired on Plugin_Name deactivation.
+ * Handler for plugin's deactivation hook.
  *
- * @todo Change prefix of the function.
- * @todo Update namespace.
+ * @todo Update prefix of the function.
+ * @todo Update namespace of the `Plugin::deactivate` method.
  *
  * @return void
  */
@@ -53,8 +52,8 @@ function plugin_name_deactivate() {
 /**
  * Handler fired on Plugin_Name uninstallation.
  *
- * @todo Change prefix of the function.
- * @todo Update namespace.
+ * @todo Update prefix of the function.
+ * @todo Update namespace of the `Plugin::uninstall` method.
  *
  * @return void
  */
@@ -65,7 +64,7 @@ function plugin_name_uninstall() {
 /**
  * Gets path to the plugin's main directory.
  *
- * @todo Change prefix of the function.
+ * @todo Update prefix of the function.
  * @todo Update name of the used constans.
  *
  * @param string $path A relative path to the base.
@@ -82,7 +81,7 @@ function plugin_name_dir( $path = '' ) {
 /**
  * Gets url to the plugin's main directory.
  *
- * @todo Change prefix of the function.
+ * @todo Update prefix of the function.
  * @todo Update name of the used constans.
  *
  * @param string $path A relative path to the base.
