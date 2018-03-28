@@ -33,7 +33,7 @@ class Example_Sub_Page extends Submenu_Page {
 	public function render( $data = [] ) {
 	?>
 		<div class="wrap">
-			<h2><?php echo $this->get_title(); ?></h2>
+			<h2><?php echo esc_html( $this->get_title() ); ?></h2>
 
 			<?php settings_errors(); ?>
 
@@ -47,10 +47,11 @@ class Example_Sub_Page extends Submenu_Page {
 	/**
 	 * Gets title of the sub page.
 	 *
+	 * @todo Change value of textdomain to your pugin unique name.
 	 * @return string
 	 */
 	public function get_title() {
-		return __( 'Submenu Page', Plugin::NAME );
+		return __( 'Submenu Page', 'plugin_name' );
 	}
 
 	/**
@@ -58,8 +59,7 @@ class Example_Sub_Page extends Submenu_Page {
 	 *
 	 * @return string
 	 */
-	public function get_parent()
-	{
+	public function get_parent() {
 		return Plugin::NAME;
 	}
 
@@ -68,8 +68,7 @@ class Example_Sub_Page extends Submenu_Page {
 	 *
 	 * @return string
 	 */
-	public function get_slug()
-	{
+	public function get_slug() {
 		return Plugin::NAME . '-submenu-page';
 	}
 }

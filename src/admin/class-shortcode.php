@@ -41,10 +41,9 @@ abstract class Shortcode implements Service_Interface, Renderer_Interface {
 	 * @param  string $content
 	 * @return string
 	 */
-	public function handle( array $atts, $content )
-	{
+	public function handle( array $atts, $content ) {
 		$attributes = $this->get_attrs( $atts );
-		$context = $this->get_context( $attributes );
+		$context    = $this->get_context( $attributes );
 
 		ob_start();
 
@@ -69,8 +68,7 @@ abstract class Shortcode implements Service_Interface, Renderer_Interface {
 	 * @param array $atts Attributes values passed in shortcode.
 	 * @return array
 	 */
-	public function get_attrs( array $atts )
-	{
+	public function get_attrs( array $atts ) {
 		return shortcode_atts( $atts, $this->get_defaults(), $this->get_tag() );
 	}
 
@@ -79,8 +77,7 @@ abstract class Shortcode implements Service_Interface, Renderer_Interface {
 	 *
 	 * @return array
 	 */
-	public function get_defaults()
-	{
+	public function get_defaults() {
 		return [];
 	}
 
@@ -90,8 +87,7 @@ abstract class Shortcode implements Service_Interface, Renderer_Interface {
 	 * @param array $atts Attributes values passed in shortcode.
 	 * @return array
 	 */
-	public function get_context( array $atts )
-	{
+	public function get_context( array $atts ) {
 		return [];
 	}
 }

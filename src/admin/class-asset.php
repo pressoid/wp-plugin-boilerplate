@@ -37,13 +37,17 @@ abstract class Asset implements Service_Interface {
 	}
 
 	/**
-	 * Gets a tag name for the asset.
+	 * Gets the tag name for the script.
 	 *
-	 * @throws RuntimeException If asset does not implement `get_tag()` method.
-	 * @return void
+	 * @throws RuntimeException If asset does not defines `NAME` constans.
+	 * @return string
 	 */
 	public function get_tag() {
-		throw new RuntimeException( 'Asset does not implement `get_tag()` method.' );
+		if ( defined( 'static::NAME' ) ) {
+			return Plugin::NAME . '_' . static::NAME;
+		}
+
+		throw new RuntimeException( 'Asset does not defines `NAME` constans.' );
 	}
 
 	/**

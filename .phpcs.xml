@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<ruleset name="WordPress Plugin Boilerplate" namespace="WordPress\Plugin\Boilerplate">
+  <arg name="extensions" value="php" />
+
+  <exclude-pattern>*/vendor/*</exclude-pattern>
+  <exclude-pattern>*/node_modules/*</exclude-pattern>
+
+  <config name="installed_paths" value="vendor/wp-coding-standards/wpcs" />
+  <rule ref="WordPress-Extra" />
+
+  <!-- @todo Update a rule value to your project textdomain string -->
+  <rule ref="WordPress.WP.I18n">
+    <properties>
+      <property name="text_domain" type="array" value="plugin_name" />
+    </properties>
+  </rule>
+
+  <!-- @todo Update a rule value to your project textdomain string -->
+  <rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+    <properties>
+      <property name="prefixes" type="array" value="plugin_name" />
+    </properties>
+  </rule>
+</ruleset>

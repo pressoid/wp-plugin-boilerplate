@@ -25,22 +25,18 @@ use Plugin_Name\Admin\Ajax;
  */
 class Example_Ajax extends Ajax {
 	/**
+	 * Tag name for the ajax.
+	 *
+	 * @var string
+	 */
+	const NAME = 'example_ajax';
+
+	/**
 	 * Renders ajax response.
 	 *
 	 * @return void
 	 */
-	public function render( $data = [] )
-	{
-		return json_encode( $data );
-	}
-
-	/**
-	 * Gets the tag name for the ajax action.
-	 *
-	 * @return string
-	 */
-	public function get_tag()
-	{
-		return 'example_ajax';
+	public function render( $data = [] ) {
+		return wp_json_encode( $data );
 	}
 }

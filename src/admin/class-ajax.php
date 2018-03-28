@@ -42,9 +42,25 @@ abstract class Ajax implements Service_Interface, Renderer_Interface {
 	 * @return string
 	 */
 	public function handle() {
-		echo $this->render( $_GET );
+		if ( wp_verify_nonce( $_REQUEST[ $this->get_nonce_holder() ], $this->get_tag() ) ) {
+			wp_send_json( $this->render( $_GET ) );
+		}
 
-		die();
+		wp_send_json_error();
+	}
+
+	/**
+	 * Gets the tag name for the script.
+	 *
+	 * @throws RuntimeException If asset does not defines `NAME` constans.
+	 * @return string
+	 */
+	public function get_tag() {
+		if ( defined( 'static::NAME' ) ) {
+			return Plugin::NAME . '_' . static::NAME;
+		}
+
+		throw new RuntimeException( 'Ajax does not defines `NAME` constans.' );
 	}
 
 	/**
@@ -53,7 +69,7 @@ abstract class Ajax implements Service_Interface, Renderer_Interface {
 	 * @throws \RuntimeException
 	 * @return string
 	 */
-	public function get_tag() {
-		throw new RuntimeException( 'Ajax does not implement `get_tag()` method.' );
+	public function get_nonce_holder() {
+		return false;
 	}
 }

@@ -26,11 +26,11 @@ use Plugin_Name\Admin\Stylesheet;
  */
 class Example_Stylesheet extends Stylesheet {
 	/**
-	 * Tag name for the script.
+	 * Tag name for the stylesheet.
 	 *
 	 * @var string
 	 */
-	const NAME = 'example-style';
+	const NAME = 'example_style';
 
 	/**
 	 * Gets the filepath of the stylesheet.
@@ -39,14 +39,5 @@ class Example_Stylesheet extends Stylesheet {
 	 */
 	public function get_filepath() {
 		return plugin_name_url( 'resources/assets/plugin.css' );
-	}
-
-	/**
-	 * Gets the tag name for the stylesheet.
-	 *
-	 * @return string
-	 */
-	public function get_tag() {
-		return static::NAME;
 	}
 }

@@ -56,14 +56,14 @@ abstract class Service_Provider implements Service_Provider_Interface {
 	 * @return void
 	 */
 	public function register() {
-		foreach ( apply_filters( $this->get_filter(), $this->services ) as $name ) {
-			$service = new $name();
+		foreach ( $this->get_services() as $service ) {
+			$instance = new $service();
 
-			if ( ! $service instanceof Service_Interface ) {
-				throw new Not_Recognized_Service_Exception( "Class [{$name}] is not recognized as service. Make sure it implements proper interface." );
+			if ( ! $instance instanceof Service_Interface ) {
+				throw new Not_Recognized_Service_Exception( "Class [{$service}] is not recognized as service. Make sure it implements proper interface." );
 			}
 
-			$service->register();
+			$instance->register();
 		}
 	}
 
@@ -78,12 +78,17 @@ abstract class Service_Provider implements Service_Provider_Interface {
 	}
 
 	/**
-	 * Gets a tag name for filter of provider's services.
+	 * Gets the tag name of the provider.
 	 *
+	 * @throws RuntimeException If asset does not defines `NAME` constans.
 	 * @return string
 	 */
-	public function get_filter() {
-		return Plugin::NAME . '_provider_' . $this->get_name();
+	public function get_tag() {
+		if ( defined( 'static::NAME' ) ) {
+			return static::NAME;
+		}
+
+		throw new RuntimeException( 'Service Provider does not define `NAME` constans.' );
 	}
 
 	/**
@@ -92,6 +97,6 @@ abstract class Service_Provider implements Service_Provider_Interface {
 	 * @return \Plugin_Name\Contracts\Service_Interface[]
 	 */
 	public function get_services() {
-		return $this->services;
+		return apply_filters( 'plugin_name_provider_' . $this->get_tag(), $this->services );
 	}
 }

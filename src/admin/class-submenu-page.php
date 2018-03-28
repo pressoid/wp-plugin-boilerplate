@@ -45,8 +45,7 @@ abstract class Submenu_Page extends Page {
 	 *
 	 * @return string
 	 */
-	public function get_parent()
-	{
+	public function get_parent() {
 		return 'plugins.php';
 	}
 }

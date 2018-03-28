@@ -33,7 +33,7 @@ class Example_Page extends Menu_Page {
 	public function render( $data = [] ) {
 	?>
 		<div class="wrap">
-			<h2><?php echo $this->get_title(); ?></h2>
+			<h2><?php echo esc_html( $this->get_title() ); ?></h2>
 
 			<?php settings_errors(); ?>
 
@@ -47,10 +47,11 @@ class Example_Page extends Menu_Page {
 	/**
 	 * Gets title of the page.
 	 *
+	 * @todo Change value of textdomain to your pugin unique name.
 	 * @return string
 	 */
 	public function get_title() {
-		return __( 'Menu Page', Plugin::NAME );
+		return __( 'Menu Page', 'plugin_name' );
 	}
 
 	/**
@@ -58,8 +59,7 @@ class Example_Page extends Menu_Page {
 	 *
 	 * @return string
 	 */
-	public function get_slug()
-	{
+	public function get_slug() {
 		return Plugin::NAME;
 	}
 }

@@ -12,16 +12,22 @@
 			"role": "Developer"
 		}
 	],
-	"scripts": {
-		"phpcs": "phpcs --standard=WordPress ./**/*.php",
-		"phpcbf": "phpcbf --standard=WordPress ./**/*.php",
-		"lint": "composer run-script phpcs && composer run-script phpcbf"
-	},
 	"require": {
 		"php": ">=5.4.0"
 	},
 	"require-dev": {
-		"dealerdirect/phpcodesniffer-composer-installer": "^0.4.2",
-		"wp-coding-standards/wpcs": "^0.13.1"
+		"squizlabs/php_codesniffer": "3.*",
+		"wp-coding-standards/wpcs": "0.14.*"
+	},
+	"scripts": {
+		"post-update-cmd": [
+			"phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs"
+		],
+		"lint": [
+			"phpcs --standard=.phpcs.xml ./"
+		],
+		"format": [
+			"phpcbf --standard=.phpcs.xml ./"
+		]
 	}
 }

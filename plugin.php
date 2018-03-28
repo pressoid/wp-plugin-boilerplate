@@ -43,14 +43,17 @@ require_once 'functions.php';
 
 /**
  * Checks environment compatibilities.
+ *
+ * @todo Change variable prefix to your unique plugin name.
  */
-$ok = require_once 'bootstrap/compatibility.php';
+$plugin_name_compatible = require_once 'bootstrap/compatibility.php';
 
 /**
  * Initialize plugin.
  *
  * @todo Change function name to your unique plugin name.
+ * @todo Change variable prefix to your unique plugin name.
  */
-if ( $ok ) {
+if ( $plugin_name_compatible ) {
 	plugin_name();
 }

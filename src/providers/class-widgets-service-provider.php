@@ -25,20 +25,18 @@ use Plugin_Name\Service_Provider;
  */
 class Widgets_Service_Provider extends Service_Provider {
 	/**
+	 * Tag name of the provider.
+	 *
+	 * @var string
+	 */
+	const NAME = 'widgets';
+
+	/**
 	 * Registers widget services at `widgets_init` hook.
 	 *
 	 * @return void
 	 */
 	public function boot() {
 		add_action( 'widgets_init', [ $this, 'register' ] );
-	}
-
-	/**
-	 * Gets a name of the provider.
-	 *
-	 * @return string
-	 */
-	public function get_name() {
-		return 'widgets';
 	}
 }

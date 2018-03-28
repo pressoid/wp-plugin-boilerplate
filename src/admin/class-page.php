@@ -54,8 +54,7 @@ abstract class Page implements Service_Interface, Renderer_Interface {
 	 *
 	 * @return string
 	 */
-	public function get_capability()
-	{
+	public function get_capability() {
 		return 'manage_options';
 	}
 }

@@ -30,7 +30,7 @@ class Example_Script extends Script {
 	 *
 	 * @var string
 	 */
-	const NAME = 'example-script';
+	const NAME = 'example_script';
 
 	/**
 	 * Gets the filepath of the script.
@@ -39,14 +39,5 @@ class Example_Script extends Script {
 	 */
 	public function get_filepath() {
 		return plugin_name_url( 'resources/assets/plugin.js' );
-	}
-
-	/**
-	 * Gets the tag name for the script.
-	 *
-	 * @return string
-	 */
-	public function get_tag() {
-		return static::NAME;
 	}
 }

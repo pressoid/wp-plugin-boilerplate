@@ -46,8 +46,7 @@ abstract class Menu_Page extends Page {
 	 *
 	 * @return string
 	 */
-	public function get_icon()
-	{
+	public function get_icon() {
 		return 'dashicons-admin-generic';
 	}
 
@@ -56,8 +55,7 @@ abstract class Menu_Page extends Page {
 	 *
 	 * @return null|integer
 	 */
-	public function get_position()
-	{
-		return;
+	public function get_position() {
+		return null;
 	}
 }

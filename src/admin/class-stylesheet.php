@@ -37,8 +37,7 @@ abstract class Stylesheet extends Asset {
 	 *
 	 * @return void
 	 */
-	protected function register_style()
-	{
+	protected function register_style() {
 		wp_register_style(
 			$this->get_tag(),
 			$this->get_filepath(),
@@ -53,8 +52,7 @@ abstract class Stylesheet extends Asset {
 	 *
 	 * @return void
 	 */
-	protected function enquque_style()
-	{
+	protected function enquque_style() {
 		wp_enqueue_style( $this->get_tag() );
 	}
 

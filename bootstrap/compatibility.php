@@ -15,12 +15,13 @@ if ( ! defined( 'PLUGIN_NAME_CONSTANS' ) ) {
 	/**
 	 * Displays admin error notice about issue.
 	 *
+	 * @todo Change value of textdomain to your pugin unique name.
 	 * @return void
 	 */
 	function plugin_name_compatibility_issue() {
 		?>
 		<div class="notice notice-error">
-			<p><?php esc_html_e( '<b>Plugin Name</b> - Issue with description.', Plugin::NAME ); ?></p>
+			<p><?php esc_html_e( '<b>Plugin Name</b> - Issue with description.', 'plugin_name' ); ?></p>
 		</div>
 		<?php
 	}
