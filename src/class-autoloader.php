@@ -143,8 +143,8 @@ class Autoloader {
 
 			// Add base_dir, prefix and suffix.
 			$filepath = $namespace['base_dir']
-			            . $namespace['prefix']
-			            . $filename
+						. $namespace['prefix']
+						. $filename
 						. $namespace['suffix'];
 
 			// Throw an exception if the file does not exist or is not readable.
@@ -158,7 +158,7 @@ class Autoloader {
 				);
 			}
 
-			require( $filepath );
+			require $filepath;
 		}
 	}
 
