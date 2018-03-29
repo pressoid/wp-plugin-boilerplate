@@ -41,9 +41,9 @@ abstract class Asset implements Service_Interface {
 	 * @throws RuntimeException If asset does not defines `NAME` constans.
 	 * @return string
 	 */
-	public function get_tag() {
+	public function get_name() {
 		if ( defined( 'static::NAME' ) ) {
-			return Plugin::NAME . '_' . static::NAME;
+			return static::NAME;
 		}
 
 		throw new RuntimeException( 'Asset does not defines `NAME` constans.' );

@@ -8,7 +8,7 @@
  * @copyright 2017 Your Name or Company Name
  */
 
-namespace Plugin_Name\Foundation\Ajax;
+namespace Plugin_Name\Ajax;
 
 use Plugin_Name\Foundation\Service_Provider;
 
@@ -23,6 +23,12 @@ use Plugin_Name\Foundation\Service_Provider;
  * @author  Your Name <email@example.com>
  */
 class Ajax_Service_Provider extends Service_Provider {
+	/**
+	 * Name of the provider.
+	 *
+	 * @var string
+	 */
+	const NAME = 'ajax_provider';
 
 	/**
 	 * Registers ajax services at `init` hook.
@@ -32,12 +38,15 @@ class Ajax_Service_Provider extends Service_Provider {
 	public function boot() {
 		add_action( 'init', [ $this, 'register' ] );
 	}
+
 	/**
-	 * Gets a name of the provider.
+	 * Defines services collection of the provider.
 	 *
-	 * @return string
+	 * @return array
 	 */
-	public function get_name() {
-		return 'ajaxes';
+	public function services() {
+		return [
+			Example_Ajax::class,
+		];
 	}
 }

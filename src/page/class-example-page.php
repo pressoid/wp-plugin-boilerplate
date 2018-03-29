@@ -59,7 +59,7 @@ class Example_Page extends Menu_Page {
 	 *
 	 * @return string
 	 */
-	public function get_slug() {
+	public function get_name() {
 		return Plugin::NAME;
 	}
 }

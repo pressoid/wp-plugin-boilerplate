@@ -8,7 +8,7 @@
  * @copyright 2017 Your Name or Company Name
  */
 
-namespace Plugin_Name\Admin\Widget;
+namespace Plugin_Name\Widget;
 
 use Plugin_Name\Widget;
 

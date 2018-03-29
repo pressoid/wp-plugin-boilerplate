@@ -33,7 +33,7 @@ abstract class Menu_Page extends Page {
 			$this->get_title(),
 			$this->get_menu_title(),
 			$this->get_capability(),
-			$this->get_slug(),
+			$this->get_name(),
 			[ $this, 'render' ],
 			$this->get_icon(),
 			$this->get_position()

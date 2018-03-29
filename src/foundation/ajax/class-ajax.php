@@ -30,8 +30,8 @@ abstract class Ajax implements Service_Interface, Renderer_Interface {
 	 * @return void
 	 */
 	public function register() {
-		add_action( 'wp_ajax_' . $this->get_tag(), [ $this, 'handle' ] );
-		add_action( 'wp_ajax_nopriv_' . $this->get_tag(), [ $this, 'handle' ] );
+		add_action( 'wp_ajax_' . $this->get_name(), [ $this, 'handle' ] );
+		add_action( 'wp_ajax_nopriv_' . $this->get_name(), [ $this, 'handle' ] );
 	}
 
 	/**
@@ -41,7 +41,7 @@ abstract class Ajax implements Service_Interface, Renderer_Interface {
 	 * @return string
 	 */
 	public function handle() {
-		if ( wp_verify_nonce( $_REQUEST[ $this->get_nonce_holder() ], $this->get_tag() ) ) {
+		if ( wp_verify_nonce( $_REQUEST[ $this->get_nonce_holder() ], $this->get_name() ) ) {
 			wp_send_json( $this->render( $_GET ) );
 		}
 
@@ -54,7 +54,7 @@ abstract class Ajax implements Service_Interface, Renderer_Interface {
 	 * @throws RuntimeException If asset does not defines `NAME` constans.
 	 * @return string
 	 */
-	public function get_tag() {
+	public function get_name() {
 		if ( defined( 'static::NAME' ) ) {
 			return Plugin::NAME . '_' . static::NAME;
 		}

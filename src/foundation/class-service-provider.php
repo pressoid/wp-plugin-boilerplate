@@ -26,22 +26,6 @@ use Plugin_Name\Exceptions\Not_Recognized_Service_Exception;
  */
 abstract class Service_Provider implements Service_Provider_Interface {
 	/**
-	 * Collection of service services.
-	 *
-	 * @var \Plugin_Name\Contracts\Service_Interface[]
-	 */
-	protected $services;
-
-	/**
-	 * Construct provider.
-	 *
-	 * @param \Plugin_Name\Contracts\Service_Interface[] $services Collection of services to register.
-	 */
-	public function __construct( array $services ) {
-		$this->services = $services;
-	}
-
-	/**
 	 * Bootstraps provider and registers defined services.
 	 *
 	 * @return void
@@ -67,22 +51,12 @@ abstract class Service_Provider implements Service_Provider_Interface {
 	}
 
 	/**
-	 * Gets a name of the provider.
-	 *
-	 * @throws \RuntimeException
-	 * @return string
-	 */
-	public function get_name() {
-		throw new RuntimeException( 'Service Provider does not implement `get_name()` method.' );
-	}
-
-	/**
 	 * Gets the tag name of the provider.
 	 *
 	 * @throws RuntimeException If asset does not defines `NAME` constans.
 	 * @return string
 	 */
-	public function get_tag() {
+	public function get_name() {
 		if ( defined( 'static::NAME' ) ) {
 			return static::NAME;
 		}
@@ -97,6 +71,6 @@ abstract class Service_Provider implements Service_Provider_Interface {
 	 * @return \Plugin_Name\Contracts\Service_Interface[]
 	 */
 	public function get_services() {
-		return apply_filters( 'plugin_name_provider_' . $this->get_tag(), $this->services );
+		return apply_filters( 'plugin_name_' . $this->get_name() . '_services', $this->services() );
 	}
 }

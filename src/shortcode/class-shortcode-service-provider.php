@@ -8,7 +8,7 @@
  * @copyright 2017 Your Name or Company Name
  */
 
-namespace Plugin_Name\Foundation\Shortcode;
+namespace Plugin_Name\Shortcode;
 
 use Plugin_Name\Foundation\Service_Provider;
 
@@ -24,11 +24,11 @@ use Plugin_Name\Foundation\Service_Provider;
  */
 class Shortcode_Service_Provider extends Service_Provider {
 	/**
-	 * Tag name of the provider.
+	 * Name of the provider.
 	 *
 	 * @var string
 	 */
-	const NAME = 'shortcode';
+	const NAME = 'shortcode_provider';
 
 	/**
 	 * Registers shortcode services at `init` hook.
@@ -37,5 +37,16 @@ class Shortcode_Service_Provider extends Service_Provider {
 	 */
 	public function boot() {
 		add_action( 'init', [ $this, 'register' ] );
+	}
+
+	/**
+	 * Defines services collection of the provider.
+	 *
+	 * @return array
+	 */
+	public function services() {
+		return [
+			Example_Shortcode::class,
+		];
 	}
 }

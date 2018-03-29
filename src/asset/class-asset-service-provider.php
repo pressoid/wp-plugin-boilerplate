@@ -8,7 +8,7 @@
  * @copyright 2017 Your Name or Company Name
  */
 
-namespace Plugin_Name\Foundation\Asset;
+namespace Plugin_Name\Asset;
 
 use Plugin_Name\Foundation\Service_Provider;
 
@@ -24,11 +24,11 @@ use Plugin_Name\Foundation\Service_Provider;
  */
 class Asset_Service_Provider extends Service_Provider {
 	/**
-	 * Tag name of the provider.
+	 * Name of the provider.
 	 *
 	 * @var string
 	 */
-	const NAME = 'asset';
+	const NAME = 'asset_provider';
 
 	/**
 	 * Registers asset services at `wp_enqueue_scripts` hook.
@@ -37,5 +37,17 @@ class Asset_Service_Provider extends Service_Provider {
 	 */
 	public function boot() {
 		add_action( 'wp_enqueue_scripts', [ $this, 'register' ] );
+	}
+
+	/**
+	 * Defines services collection of the provider.
+	 *
+	 * @return array
+	 */
+	public function services() {
+		return [
+			Example_Script::class,
+			Example_Stylesheet::class,
+		];
 	}
 }

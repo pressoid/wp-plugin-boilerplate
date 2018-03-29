@@ -25,12 +25,26 @@ use Plugin_Name\Contracts\Service_Interface;
  */
 abstract class Shortcode implements Service_Interface, Renderer_Interface {
 	/**
+	 * Gets the tag name of the provider.
+	 *
+	 * @throws RuntimeException If asset does not defines `NAME` constans.
+	 * @return string
+	 */
+	public function get_name() {
+		if ( defined( 'static::NAME' ) ) {
+			return static::NAME;
+		}
+
+		throw new RuntimeException( 'Shortcode Service does not define `NAME` constans.' );
+	}
+
+	/**
 	 * Adds a shortcode inside WordPress.
 	 *
 	 * @return void
 	 */
 	public function register() {
-		add_shortcode( $this->get_tag(), [ $this, 'handle' ] );
+		add_shortcode( $this->get_name(), [ $this, 'handle' ] );
 	}
 
 	/**
@@ -52,23 +66,13 @@ abstract class Shortcode implements Service_Interface, Renderer_Interface {
 	}
 
 	/**
-	 * Gets the tag name for the shortcode.
-	 *
-	 * @throws \RuntimeException
-	 * @return string
-	 */
-	public function get_tag() {
-		throw new RuntimeException( 'Shortcode does not implement `get_tag()` method.' );
-	}
-
-	/**
 	 * Gets the shortcode attributes values extended by defaults.
 	 *
 	 * @param array $atts Attributes values passed in shortcode.
 	 * @return array
 	 */
 	public function get_attrs( array $atts ) {
-		return shortcode_atts( $atts, $this->get_defaults(), $this->get_tag() );
+		return shortcode_atts( $atts, $this->get_defaults(), $this->get_name() );
 	}
 
 	/**

@@ -21,4 +21,10 @@ namespace Plugin_Name\Contract;
  * @author  Your Name <email@example.com>
  */
 interface Service_Provider_Interface extends Registrar_Interface {
+	/**
+	 * Defines services collection of the provider.
+	 *
+	 * @return array
+	 */
+	public function services();
 }

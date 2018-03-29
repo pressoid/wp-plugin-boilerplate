@@ -25,6 +25,13 @@ use Plugin_Name\Foundation\Shortcode\Shortcode;
  */
 class Example_Shortcode extends Shortcode {
 	/**
+	 * Name of the provider.
+	 *
+	 * @var string
+	 */
+	const NAME = 'example_shortcode';
+
+	/**
 	 * Renders shortcode markup.
 	 *
 	 * @param  array  $data
@@ -34,14 +41,5 @@ class Example_Shortcode extends Shortcode {
 		?>
 			<h3>Example Shortcode</h3>
 		<?php
-	}
-
-	/**
-	 * Gets the tag name for the shortcode.
-	 *
-	 * @return string
-	 */
-	public function get_tag() {
-		return 'example_shortcode';
 	}
 }

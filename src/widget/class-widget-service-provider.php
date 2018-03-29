@@ -8,9 +8,10 @@
  * @copyright 2017 Your Name or Company Name
  */
 
-namespace Plugin_Name\Foundation\Widget;
+namespace Plugin_Name\Widget;
 
 use Plugin_Name\Foundation\Service_Provider;
+use Plugin_Name\Admin\Widgets\Example_Widget;
 
 /**
  * Class Widget Service Provider.
@@ -24,11 +25,11 @@ use Plugin_Name\Foundation\Service_Provider;
  */
 class Widget_Service_Provider extends Service_Provider {
 	/**
-	 * Tag name of the provider.
+	 * Name of the provider.
 	 *
 	 * @var string
 	 */
-	const NAME = 'widget';
+	const NAME = 'widget_provider';
 
 	/**
 	 * Registers widget services at `widgets_init` hook.
@@ -37,5 +38,16 @@ class Widget_Service_Provider extends Service_Provider {
 	 */
 	public function boot() {
 		add_action( 'widgets_init', [ $this, 'register' ] );
+	}
+
+	/**
+	 * Defines services collection of the provider.
+	 *
+	 * @return array
+	 */
+	public function services() {
+		return [
+			Example_Widget::class,
+		];
 	}
 }

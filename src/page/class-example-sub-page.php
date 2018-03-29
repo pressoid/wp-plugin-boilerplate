@@ -68,7 +68,7 @@ class Example_Sub_Page extends Submenu_Page {
 	 *
 	 * @return string
 	 */
-	public function get_slug() {
+	public function get_name() {
 		return Plugin::NAME . '-submenu-page';
 	}
 }

@@ -41,7 +41,7 @@ abstract class Script extends Asset {
 	 */
 	protected function register_script() {
 		wp_register_script(
-			$this->get_tag(),
+			$this->get_name(),
 			$this->get_filepath(),
 			$this->get_dependencies(),
 			$this->get_version(),
@@ -57,7 +57,7 @@ abstract class Script extends Asset {
 	protected function localize_script() {
 		if ( ! empty( $this->get_localization() ) ) {
 			wp_localize_script(
-				$this->get_tag(),
+				$this->get_name(),
 				$this->get_variable(),
 				$this->get_localization()
 			);
@@ -70,7 +70,7 @@ abstract class Script extends Asset {
 	 * @return void
 	 */
 	protected function enqueue_script() {
-		wp_enqueue_script( $this->get_tag() );
+		wp_enqueue_script( $this->get_name() );
 	}
 
 	/**

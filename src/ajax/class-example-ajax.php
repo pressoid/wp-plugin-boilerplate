@@ -2,7 +2,6 @@
 /**
  * WP Plugin Boilerplate.
  *
- * @package   Plugin_Name
  * @author    Your Name <email@example.com>
  * @license   GPL-3.0+
  * @link      http://example.com
@@ -20,7 +19,7 @@ use Plugin_Name\Admin\Ajax;
  *
  * @since   1.0.0
  *
- * @package Plugin_Name
+ * @package Plugin_Name\Ajax
  * @author  Your Name <email@example.com>
  */
 class Example_Ajax extends Ajax {
