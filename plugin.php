@@ -39,7 +39,7 @@ define( 'PLUGIN_NAME_PATH', plugin_dir_path( __FILE__ ) );
  * Bootstrap and autoload plugin's files and functions.
  */
 require_once 'bootstrap/autoload.php';
-require_once 'functions.php';
+require_once 'bootstrap/functions.php';
 
 /**
  * Checks environment compatibilities.

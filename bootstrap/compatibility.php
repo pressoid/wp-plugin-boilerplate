@@ -9,8 +9,6 @@
  * @copyright 2017 Your Name or Company Name
  */
 
-use Plugin_Name\Plugin;
-
 if ( ! defined( 'PLUGIN_NAME_CONSTANS' ) ) {
 	/**
 	 * Displays admin error notice about issue.
