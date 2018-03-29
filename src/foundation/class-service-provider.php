@@ -40,13 +40,17 @@ abstract class Service_Provider implements Service_Provider_Interface {
 	 */
 	public function register() {
 		foreach ( $this->get_services() as $service ) {
-			$instance = new $service();
-
-			if ( ! $instance instanceof Service_Interface ) {
-				throw new Not_Recognized_Service_Exception( "Class [{$service}] is not recognized as service. Make sure it implements proper interface." );
+			if ( is_string( $service ) ) {
+				$service = new $service();
 			}
 
-			$instance->register();
+			if ( ! $service instanceof Service_Interface ) {
+				$name = get_class($service);
+
+				throw new Not_Recognized_Service_Exception( "Class [{$name}] is not recognized as service. Make sure it implements proper interface." );
+			}
+
+			$service->register();
 		}
 	}
 
