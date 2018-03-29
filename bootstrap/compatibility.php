@@ -1,6 +1,4 @@
 <?php
-
-use Plugin_Name\Plugin;
 /**
  * WP Plugin Boilerplate.
  *
@@ -10,6 +8,8 @@ use Plugin_Name\Plugin;
  * @link      http://example.com
  * @copyright 2017 Your Name or Company Name
  */
+
+use Plugin_Name\Plugin;
 
 if ( ! defined( 'PLUGIN_NAME_CONSTANS' ) ) {
 	/**
