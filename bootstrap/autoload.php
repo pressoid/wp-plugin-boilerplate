@@ -22,4 +22,5 @@ require_once __DIR__ . '/src/class-autoloader.php';
 $plugin_name_autoloader = new Autoloader();
 $plugin_name_autoloader
 	->add_namespace( 'Plugin_Name', __DIR__ . '/src', 'class-', '.php', true )
+	->add_namespace( 'Plugin_Name', __DIR__ . '/src', 'interface-', '.php', true )
 	->register();
