@@ -10,9 +10,8 @@
 
 namespace Plugin_Name\Foundation\Ajax;
 
+use Plugin_Name\Foundation\Service;
 use Plugin_Name\Contracts\Renderer_Interface;
-use Plugin_Name\Contracts\Service_Interface;
-
 /**
  * Class Ajax.
  *
@@ -23,7 +22,7 @@ use Plugin_Name\Contracts\Service_Interface;
  * @package Plugin_Name\Ajax
  * @author  Your Name <email@example.com>
  */
-abstract class Ajax implements Service_Interface, Renderer_Interface {
+abstract class Ajax extends Service implements Renderer_Interface {
 	/**
 	 * Adds an ajax inside WordPress.
 	 *
@@ -46,20 +45,6 @@ abstract class Ajax implements Service_Interface, Renderer_Interface {
 		}
 
 		wp_send_json_error();
-	}
-
-	/**
-	 * Gets the tag name for the script.
-	 *
-	 * @throws RuntimeException If asset does not defines `NAME` constans.
-	 * @return string
-	 */
-	public function get_name() {
-		if ( defined( 'static::NAME' ) ) {
-			return Plugin::NAME . '_' . static::NAME;
-		}
-
-		throw new RuntimeException( 'Ajax does not defines `NAME` constans.' );
 	}
 
 	/**

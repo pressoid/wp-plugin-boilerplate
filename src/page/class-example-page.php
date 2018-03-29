@@ -26,6 +26,13 @@ use Plugin_Name\Foundation\Page\Menu_Page;
  */
 class Example_Page extends Menu_Page {
 	/**
+	 * Name of the service.
+	 *
+	 * @var string
+	 */
+	const NAME = 'plugin_name_example_page';
+
+	/**
 	 * Render settings page content.
 	 *
 	 * @return void
@@ -52,14 +59,5 @@ class Example_Page extends Menu_Page {
 	 */
 	public function get_title() {
 		return __( 'Menu Page', 'plugin_name' );
-	}
-
-	/**
-	 * Gets slug of the menu page.
-	 *
-	 * @return string
-	 */
-	public function get_name() {
-		return Plugin::NAME;
 	}
 }

@@ -10,6 +10,7 @@
 
 namespace Plugin_Name\Foundation\Shortcode;
 
+use Plugin_Name\Foundation\Service;
 use Plugin_Name\Contracts\Renderer_Interface;
 use Plugin_Name\Contracts\Service_Interface;
 
@@ -23,21 +24,7 @@ use Plugin_Name\Contracts\Service_Interface;
  * @package Plugin_Name\Shortcode
  * @author  Your Name <email@example.com>
  */
-abstract class Shortcode implements Service_Interface, Renderer_Interface {
-	/**
-	 * Gets the tag name of the provider.
-	 *
-	 * @throws RuntimeException If asset does not defines `NAME` constans.
-	 * @return string
-	 */
-	public function get_name() {
-		if ( defined( 'static::NAME' ) ) {
-			return static::NAME;
-		}
-
-		throw new RuntimeException( 'Shortcode Service does not define `NAME` constans.' );
-	}
-
+abstract class Shortcode extends Service implements Renderer_Interface {
 	/**
 	 * Adds a shortcode inside WordPress.
 	 *

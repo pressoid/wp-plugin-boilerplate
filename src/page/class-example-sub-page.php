@@ -11,7 +11,7 @@
 
 namespace Plugin_Name\Page;
 
-use Plugin_Name\Plugin;
+use Plugin_Name\Page\Example_Page;
 use Plugin_Name\Foundation\Page\Submenu_Page;
 
 /**
@@ -25,6 +25,13 @@ use Plugin_Name\Foundation\Page\Submenu_Page;
  * @author  Your Name <email@example.com>
  */
 class Example_Sub_Page extends Submenu_Page {
+	/**
+	 * Name of the service.
+	 *
+	 * @var string
+	 */
+	const NAME = 'plugin_name_example_sub_page';
+
 	/**
 	 * Render settings page content.
 	 *
@@ -60,15 +67,6 @@ class Example_Sub_Page extends Submenu_Page {
 	 * @return string
 	 */
 	public function get_parent() {
-		return Plugin::NAME;
-	}
-
-	/**
-	 * Gets slug of the menu page.
-	 *
-	 * @return string
-	 */
-	public function get_name() {
-		return Plugin::NAME . '-submenu-page';
+		return Example_Page::NAME;
 	}
 }

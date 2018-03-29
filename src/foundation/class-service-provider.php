@@ -51,9 +51,19 @@ abstract class Service_Provider implements Service_Provider_Interface {
 	}
 
 	/**
-	 * Gets the tag name of the provider.
+	 * Gets collection of defined services.
 	 *
-	 * @throws RuntimeException If asset does not defines `NAME` constans.
+	 * @todo Change filter prefix to your unique plugin name.
+	 * @return \Plugin_Name\Contracts\Service_Interface[]
+	 */
+	public function get_services() {
+		return apply_filters( 'plugin_name_' . $this->get_name() . '_services', $this->services() );
+	}
+
+	/**
+	 * Gets name of the provider.
+	 *
+	 * @throws RuntimeException If provider does not defines `NAME` constans.
 	 * @return string
 	 */
 	public function get_name() {
@@ -62,15 +72,5 @@ abstract class Service_Provider implements Service_Provider_Interface {
 		}
 
 		throw new RuntimeException( 'Service Provider does not define `NAME` constans.' );
-	}
-
-	/**
-	 * Gets collection of defined services.
-	 *
-	 * @todo Change filter prefix to your unique plugin name.
-	 * @return \Plugin_Name\Contracts\Service_Interface[]
-	 */
-	public function get_services() {
-		return apply_filters( 'plugin_name_' . $this->get_name() . '_services', $this->services() );
 	}
 }

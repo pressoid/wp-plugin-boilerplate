@@ -10,9 +10,8 @@
 
 namespace Plugin_Name\Foundation\Page;
 
-use Plugin_Name\Contracts\Registrar_Interface;
+use Plugin_Name\Foundation\Service;
 use Plugin_Name\Contracts\Renderer_Interface;
-use Plugin_Name\Contracts\Service_Interface;
 
 /**
  * Class Page.
@@ -24,20 +23,13 @@ use Plugin_Name\Contracts\Service_Interface;
  * @package Plugin_Name\Page
  * @author  Your Name <email@example.com>
  */
-abstract class Page implements Service_Interface, Renderer_Interface {
+abstract class Page extends Service implements Renderer_Interface {
 	/**
 	 * Gets title of the page.
 	 *
 	 * @return string
 	 */
 	abstract public function get_title();
-
-	/**
-	 * Gets slug of the menu page.
-	 *
-	 * @return string
-	 */
-	abstract public function get_name();
 
 	/**
 	 * Gets title of the page in a menu.

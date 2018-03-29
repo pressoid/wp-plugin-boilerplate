@@ -12,7 +12,7 @@ namespace Plugin_Name\Foundation\Asset;
 
 use RuntimeException;
 use Plugin_Name\Plugin;
-use Plugin_Name\Contracts\Service_Interface;
+use Plugin_Name\Foundation\Service;
 
 /**
  * Class Asset.
@@ -24,7 +24,7 @@ use Plugin_Name\Contracts\Service_Interface;
  * @package Plugin_Name\Asset
  * @author  Your Name <email@example.com>
  */
-abstract class Asset implements Service_Interface {
+abstract class Asset extends Service {
 	/**
 	 * Gets a filepath of the asset.
 	 *
@@ -33,20 +33,6 @@ abstract class Asset implements Service_Interface {
 	 */
 	public function get_filepath() {
 		throw new RuntimeException( 'Asset does not implement `get_filepath()` method.' );
-	}
-
-	/**
-	 * Gets the tag name for the script.
-	 *
-	 * @throws RuntimeException If asset does not defines `NAME` constans.
-	 * @return string
-	 */
-	public function get_name() {
-		if ( defined( 'static::NAME' ) ) {
-			return static::NAME;
-		}
-
-		throw new RuntimeException( 'Asset does not defines `NAME` constans.' );
 	}
 
 	/**
