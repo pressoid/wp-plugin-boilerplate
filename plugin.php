@@ -36,12 +36,6 @@ define( 'PLUGIN_NAME_URL', plugin_dir_url( __FILE__ ) );
 define( 'PLUGIN_NAME_PATH', plugin_dir_path( __FILE__ ) );
 
 /**
- * Bootstrap and autoload plugin's files and functions.
- */
-require_once 'bootstrap/autoload.php';
-require_once 'bootstrap/functions.php';
-
-/**
  * Checks environment compatibilities.
  *
  * @todo Change variable prefix to your unique plugin name.
@@ -55,5 +49,11 @@ $plugin_name_compatible = require_once 'bootstrap/compatibility.php';
  * @todo Change variable prefix to your unique plugin name.
  */
 if ( $plugin_name_compatible ) {
+	/**
+	 * Bootstrap and autoload plugin's files and functions.
+	 */
+	require_once 'bootstrap/autoload.php';
+	require_once 'bootstrap/functions.php';
+
 	plugin_name();
 }
