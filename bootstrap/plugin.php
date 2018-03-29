@@ -65,7 +65,7 @@ return new Plugin_Name\Plugin(
 		| extend base `Ajax` class.
 		|
 		*/
-		new Plugin_Name\Providers\Ajaxes_Service_Provider(
+		new Plugin_Name\Providers\Ajax_Service_Provider(
 			[
 				Plugin_Name\Admin\Ajaxes\Example_Ajax::class,
 			]

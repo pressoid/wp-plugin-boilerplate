@@ -2,7 +2,6 @@
 /**
  * WP Plugin Boilerplate.
  *
- * @package   Plugin_Name
  * @author    Your Name <email@example.com>
  * @license   GPL-3.0+
  * @link      http://example.com
