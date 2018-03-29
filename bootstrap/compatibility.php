@@ -25,9 +25,7 @@ if ( ! defined( 'PLUGIN_NAME_CONSTANS' ) ) {
 	}
 	add_action( 'admin_notices', 'plugin_name_compatibility_issue' );
 
-	// Something wrong. Abort.
-	return false;
+	return false; // Something wrong. Abandon the ship.
 }
 
-// Everything is ok.
-return true;
+return true; // Everything is ok.
