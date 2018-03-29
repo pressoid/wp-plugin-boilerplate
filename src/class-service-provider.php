@@ -94,6 +94,7 @@ abstract class Service_Provider implements Service_Provider_Interface {
 	/**
 	 * Gets collection of defined services.
 	 *
+	 * @todo Change filter prefix to your unique plugin name.
 	 * @return \Plugin_Name\Contracts\Service_Interface[]
 	 */
 	public function get_services() {
