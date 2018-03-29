@@ -26,7 +26,7 @@ use Plugin_Name\Admin\Stylesheet;
  */
 class Example_Stylesheet extends Stylesheet {
 	/**
-	 * Tag name for the stylesheet.
+	 * Name for the stylesheet.
 	 *
 	 * @var string
 	 */

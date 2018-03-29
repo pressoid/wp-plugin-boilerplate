@@ -26,7 +26,7 @@ use Plugin_Name\Admin\Script;
  */
 class Example_Script extends Script {
 	/**
-	 * Tag name for the script.
+	 * Name for the script.
 	 *
 	 * @var string
 	 */
