@@ -36,6 +36,6 @@ class Example_Ajax extends Ajax {
 	 * @return void
 	 */
 	public function render( $data = [] ) {
-		return wp_json_encode( $data );
+		return $data;
 	}
 }

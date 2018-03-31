@@ -40,8 +40,10 @@ abstract class Ajax extends Service implements Renderer_Interface {
 	 * @return string
 	 */
 	public function handle() {
-		if ( wp_verify_nonce( $_REQUEST[ $this->get_nonce_holder() ], $this->get_name() ) ) {
+		if ( wp_verify_nonce( $this->get_nonce(), $this->get_name() ) ) {
 			wp_send_json( $this->render( $_GET ) );
+
+			return;
 		}
 
 		wp_send_json_error();
@@ -53,7 +55,7 @@ abstract class Ajax extends Service implements Renderer_Interface {
 	 * @throws \RuntimeException
 	 * @return string
 	 */
-	public function get_nonce_holder() {
-		return false;
+	public function get_nonce() {
+		return $_REQUEST['_ajax_nonce'];
 	}
 }
