@@ -54,6 +54,6 @@ if ( $plugin_name_compatible ) {
 	 */
 	require_once 'bootstrap/autoload.php';
 	require_once 'bootstrap/functions.php';
-
-	plugin_name();
+	
+	add_action( 'plugins_loaded', 'plugin_name' );
 }
