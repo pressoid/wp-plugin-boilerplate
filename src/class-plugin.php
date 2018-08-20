@@ -56,7 +56,7 @@ final class Plugin implements Registrar_Interface {
 	 * @param \Plugin_Name\Contracts\Service_Provider_Interface[] $providers Collection of providers to bootstrap.
 	 */
 	public function __construct( array $providers ) {
-		$this->providers = apply_filters('plugin_name_providers', $providers);
+		$this->providers = apply_filters( 'plugin_name_providers', $providers );
 	}
 
 	/**
