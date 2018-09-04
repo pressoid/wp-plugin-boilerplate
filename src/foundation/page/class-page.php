@@ -11,7 +11,7 @@
 namespace Plugin_Name\Foundation\Page;
 
 use Plugin_Name\Foundation\Service;
-use Plugin_Name\Contracts\Renderer_Interface;
+use Plugin_Name\Contract\Renderer;
 
 /**
  * Class Page.
@@ -23,7 +23,7 @@ use Plugin_Name\Contracts\Renderer_Interface;
  * @package Plugin_Name\Page
  * @author  Your Name <email@example.com>
  */
-abstract class Page extends Service implements Renderer_Interface {
+abstract class Page extends Service implements Renderer {
 	/**
 	 * Gets title of the page.
 	 *

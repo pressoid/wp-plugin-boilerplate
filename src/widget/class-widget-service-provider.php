@@ -10,8 +10,8 @@
 
 namespace Plugin_Name\Widget;
 
+use Plugin_Name\Widget\Example_Widget;
 use Plugin_Name\Foundation\Service_Provider;
-use Plugin_Name\Admin\Widgets\Example_Widget;
 
 /**
  * Class Widget Service Provider.

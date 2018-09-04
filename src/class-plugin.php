@@ -10,8 +10,8 @@
 
 namespace Plugin_Name;
 
-use Plugin_Name\Contracts\Registrar_Interface;
-use Plugin_Name\Contracts\Service_Provider_Interface;
+use Plugin_Name\Contract\Registrar;
+use Plugin_Name\Contract\Service_Provider as Interface_Service_Provider;
 
 /**
  * Class Plugin.
@@ -24,7 +24,7 @@ use Plugin_Name\Contracts\Service_Provider_Interface;
  * @package Plugin_Name
  * @author  Your Name <email@example.com>
  */
-final class Plugin implements Registrar_Interface {
+final class Plugin implements Registrar {
 	/**
 	 * Name of the plugin.
 	 *
@@ -46,14 +46,14 @@ final class Plugin implements Registrar_Interface {
 	/**
 	 * Collection of providers.
 	 *
-	 * @var \Plugin_Name\Contracts\Service_Provider_Interface[]
+	 * @var \Plugin_Name\Contract\Service_Provider[]
 	 */
 	protected $providers;
 
 	/**
 	 * Constructs plugin.
 	 *
-	 * @param \Plugin_Name\Contracts\Service_Provider_Interface[] $providers Collection of providers to bootstrap.
+	 * @param \Plugin_Name\Contract\Service_Provider[] $providers Collection of providers to bootstrap.
 	 */
 	public function __construct( array $providers ) {
 		$this->providers = apply_filters( 'plugin_name_providers', $providers );
@@ -66,6 +66,16 @@ final class Plugin implements Registrar_Interface {
 	 */
 	public function register() {
 		foreach ( $this->providers as $provider ) {
+			if ( is_string( $provider ) ) {
+				$provider = new $provider();
+			}
+
+			if ( ! $provider instanceof Interface_Service_Provider ) {
+				$name = get_class( $provider );
+
+				throw new Not_Recognized_Service_Exception( "Class [{$name}] is not recognized as service provider. Make sure it implements proper interface." );
+			}
+
 			$provider->boot();
 		}
 	}
@@ -103,7 +113,7 @@ final class Plugin implements Registrar_Interface {
 	/**
 	 * Gets collection of providers.
 	 *
-	 * @return \Plugin_Name\Contracts\Service_Provider_Interface[]
+	 * @return \Plugin_Name\Contract\Service_Provider[]
 	 */
 	public function get_providers() {
 		return $this->providers;

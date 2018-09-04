@@ -10,9 +10,9 @@
 
 namespace Plugin_Name\Foundation;
 
-use Plugin_Name\Contracts\Service_Interface;
-use Plugin_Name\Contracts\Service_Provider_Interface;
 use Plugin_Name\Exceptions\Not_Recognized_Service_Exception;
+use Plugin_Name\Contract\Service as Interface_Service;
+use Plugin_Name\Contract\Service_Provider as Interface_Service_Provider;
 
 /**
  * Class Service Provider.
@@ -24,13 +24,13 @@ use Plugin_Name\Exceptions\Not_Recognized_Service_Exception;
  * @package Plugin_Name
  * @author  Your Name <email@example.com>
  */
-abstract class Service_Provider implements Service_Provider_Interface {
+abstract class Service_Provider implements Interface_Service_Provider {
 	/**
-	 * Bootstraps provider and registers defined services.
+	 * Defines services collection of the provider.
 	 *
-	 * @return void
+	 * @return array
 	 */
-	abstract public function boot();
+	abstract public function services();
 
 	/**
 	 * Register services defined in provider.
@@ -44,8 +44,8 @@ abstract class Service_Provider implements Service_Provider_Interface {
 				$service = new $service();
 			}
 
-			if ( ! $service instanceof Service_Interface ) {
-				$name = get_class($service);
+			if ( ! $service instanceof Interface_Service ) {
+				$name = get_class( $service );
 
 				throw new Not_Recognized_Service_Exception( "Class [{$name}] is not recognized as service. Make sure it implements proper interface." );
 			}
@@ -58,7 +58,7 @@ abstract class Service_Provider implements Service_Provider_Interface {
 	 * Gets collection of defined services.
 	 *
 	 * @todo Change filter prefix to your unique plugin name.
-	 * @return \Plugin_Name\Contracts\Service_Interface[]
+	 * @return \Plugin_Name\Contract\Service[]
 	 */
 	public function get_services() {
 		return apply_filters( 'plugin_name_' . $this->get_name() . '_services', $this->services() );

@@ -20,11 +20,11 @@ namespace Plugin_Name\Contract;
  * @package Plugin_Name\Contract
  * @author  Your Name <email@example.com>
  */
-interface Service_Provider_Interface extends Registrar_Interface {
+interface Service_Provider extends Registrar {
 	/**
-	 * Defines services collection of the provider.
+	 * Bootstraps provider and registers defined services.
 	 *
-	 * @return array
+	 * @return void
 	 */
-	public function services();
+	public function boot();
 }

@@ -11,7 +11,7 @@
 namespace Plugin_Name\Foundation\Widget;
 
 use WP_Widget;
-use Plugin_Name\Contracts\Service_Interface;
+use Plugin_Name\Contract\Service;
 
 /**
  * Class Widget.
@@ -23,7 +23,7 @@ use Plugin_Name\Contracts\Service_Interface;
  * @package Plugin_Name\Widget
  * @author  Your Name <email@example.com>
  */
-abstract class Widget extends WP_Widget implements Service_Interface {
+abstract class Widget extends WP_Widget implements Service {
 	/**
 	 * Adds a widget inside WordPress.
 	 *

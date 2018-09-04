@@ -22,7 +22,7 @@ function plugin_name() {
 	static $plugin = null;
 
 	if ( null === $plugin ) {
-		$plugin = require_once __DIR__ . '/bootstrap/plugin.php';
+		$plugin = require_once __DIR__ . '/plugin.php';
 
 		register_uninstall_hook( PLUGIN_NAME_PATH, 'plugin_name_uninstall' );
 		register_activation_hook( PLUGIN_NAME_PATH, 'plugin_name_activate' );

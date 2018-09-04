@@ -10,9 +10,8 @@
 
 namespace Plugin_Name\Foundation\Shortcode;
 
+use Plugin_Name\Contract\Renderer;
 use Plugin_Name\Foundation\Service;
-use Plugin_Name\Contracts\Renderer_Interface;
-use Plugin_Name\Contracts\Service_Interface;
 
 /**
  * Class Shortcode.
@@ -24,7 +23,7 @@ use Plugin_Name\Contracts\Service_Interface;
  * @package Plugin_Name\Shortcode
  * @author  Your Name <email@example.com>
  */
-abstract class Shortcode extends Service implements Renderer_Interface {
+abstract class Shortcode extends Service implements Renderer {
 	/**
 	 * Adds a shortcode inside WordPress.
 	 *

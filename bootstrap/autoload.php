@@ -9,7 +9,7 @@
  * @copyright 2017 Your Name or Company Name
  */
 
-require_once __DIR__ . '/src/class-autoloader.php';
+require_once dirname( __DIR__ ) . '/src/class-autoloader.php';
 
 /**
  * Automatically locates and loads files based on their
@@ -19,8 +19,9 @@ require_once __DIR__ . '/src/class-autoloader.php';
  * @todo Change variable prefix to your unique plugin name.
  * @todo Change `add_namespace` first argument to your plugin namespace.
  */
-$plugin_name_autoloader = new Autoloader();
+$plugin_name_autoloader = new Plugin_Name\Autoloader( 'Plugin_Name', dirname( __DIR__ ) . '/src' );
+
 $plugin_name_autoloader
-	->add_namespace( 'Plugin_Name', __DIR__ . '/src', 'class-', '.php', true )
-	->add_namespace( 'Plugin_Name', __DIR__ . '/src', 'interface-', '.php', true )
+	->add_prefix( 'class' )
+	->add_prefix( 'interface' )
 	->register();

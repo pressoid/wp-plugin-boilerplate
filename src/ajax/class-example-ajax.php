@@ -8,9 +8,9 @@
  * @copyright 2017 Your Name or Company Name
  */
 
-namespace Plugin_Name\Admin\Ajaxes;
+namespace Plugin_Name\Ajax;
 
-use Plugin_Name\Admin\Ajax;
+use Plugin_Name\Foundation\Ajax\Ajax;
 
 /**
  * Class Example Ahax.

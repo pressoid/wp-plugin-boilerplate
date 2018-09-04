@@ -19,7 +19,7 @@ if ( ! defined( 'PLUGIN_NAME_CONSTANS' ) ) {
 	function plugin_name_compatibility_issue() {
 		?>
 		<div class="notice notice-error">
-			<p><?php echo esc_html( '<b>Plugin Name</b> - Issue with description.', 'plugin_name' ); ?></p>
+			<p><?php echo esc_html( '[Plugin Name]: `PLUGIN_NAME_CONSTANS` constans is not defined.', 'plugin_name' ); ?></p>
 		</div>
 		<?php
 	}

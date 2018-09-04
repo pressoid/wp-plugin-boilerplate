@@ -10,7 +10,7 @@
 
 namespace Plugin_Name\Foundation;
 
-use Plugin_Name\Contracts\Service_Interface;
+use Plugin_Name\Contract\Service as Interface_Service;
 
 /**
  * Class Service.
@@ -22,7 +22,7 @@ use Plugin_Name\Contracts\Service_Interface;
  * @package Plugin_Name
  * @author  Your Name <email@example.com>
  */
-abstract class Service implements Service_Interface {
+abstract class Service implements Interface_Service {
 	/**
 	 * Gets name of the service.
 	 *

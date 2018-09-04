@@ -10,7 +10,7 @@
 
 namespace Plugin_Name\Widget;
 
-use Plugin_Name\Widget;
+use Plugin_Name\Foundation\Widget\Widget;
 
 /**
  * Class Example Widget.

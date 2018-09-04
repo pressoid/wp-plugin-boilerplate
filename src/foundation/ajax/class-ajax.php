@@ -11,7 +11,7 @@
 namespace Plugin_Name\Foundation\Ajax;
 
 use Plugin_Name\Foundation\Service;
-use Plugin_Name\Contracts\Renderer_Interface;
+use Plugin_Name\Contract\Renderer;
 /**
  * Class Ajax.
  *
@@ -22,7 +22,7 @@ use Plugin_Name\Contracts\Renderer_Interface;
  * @package Plugin_Name\Ajax
  * @author  Your Name <email@example.com>
  */
-abstract class Ajax extends Service implements Renderer_Interface {
+abstract class Ajax extends Service implements Renderer {
 	/**
 	 * Adds an ajax inside WordPress.
 	 *

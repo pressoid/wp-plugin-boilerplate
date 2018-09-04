@@ -20,7 +20,7 @@ namespace Plugin_Name\Contract;
  * @package Plugin_Name\Contract
  * @author  Your Name <email@example.com>
  */
-interface Renderer_Interface {
+interface Renderer {
 	/**
 	 * Renders current subject.
 	 *

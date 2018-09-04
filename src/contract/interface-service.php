@@ -20,5 +20,5 @@ namespace Plugin_Name\Contract;
  * @package Plugin_Name\Contract
  * @author  Your Name <email@example.com>
  */
-interface Service_Interface extends Registrar_Interface {
+interface Service extends Registrar {
 }
