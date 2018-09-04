@@ -21,6 +21,7 @@
 */
 return new Plugin_Name\Plugin(
 	[
+		Plugin_Name\I18n\I18n_Service_Provider::class,
 		Plugin_Name\Page\Page_Service_Provider::class,
 		Plugin_Name\Ajax\Ajax_Service_Provider::class,
 		Plugin_Name\Asset\Asset_Service_Provider::class,

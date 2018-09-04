@@ -34,6 +34,7 @@ if ( ! defined( 'WPINC' ) ) {
  */
 define( 'PLUGIN_NAME_URL', plugin_dir_url( __FILE__ ) );
 define( 'PLUGIN_NAME_PATH', plugin_dir_path( __FILE__ ) );
+define( 'PLUGIN_NAME_DIR', basename( dirname( __FILE__ ) ) );
 
 /**
  * Checks environment compatibilities.
@@ -54,6 +55,6 @@ if ( $plugin_name_compatible ) {
 	 */
 	require_once 'bootstrap/autoload.php';
 	require_once 'bootstrap/functions.php';
-	
+
 	add_action( 'plugins_loaded', 'plugin_name' );
 }
