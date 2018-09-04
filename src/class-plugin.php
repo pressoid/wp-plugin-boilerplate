@@ -10,8 +10,8 @@
 
 namespace Plugin_Name;
 
-use Plugin_Name\Contract\Registrar;
-use Plugin_Name\Contract\Service_Provider as Interface_Service_Provider;
+use Plugin_Name\Foundation\Contract\Registrar;
+use Plugin_Name\Foundation\Contract\Service_Provider as Interface_Service_Provider;
 
 /**
  * Class Plugin.
@@ -46,14 +46,14 @@ final class Plugin implements Registrar {
 	/**
 	 * Collection of providers.
 	 *
-	 * @var \Plugin_Name\Contract\Service_Provider[]
+	 * @var \Plugin_Name\Foundation\Contract\Service_Provider[]
 	 */
 	protected $providers;
 
 	/**
 	 * Constructs plugin.
 	 *
-	 * @param \Plugin_Name\Contract\Service_Provider[] $providers Collection of providers to bootstrap.
+	 * @param \Plugin_Name\Foundation\Contract\Service_Provider[] $providers Collection of providers to bootstrap.
 	 */
 	public function __construct( array $providers ) {
 		$this->providers = apply_filters( 'plugin_name_providers', $providers );
@@ -113,7 +113,7 @@ final class Plugin implements Registrar {
 	/**
 	 * Gets collection of providers.
 	 *
-	 * @return \Plugin_Name\Contract\Service_Provider[]
+	 * @return \Plugin_Name\Foundation\Contract\Service_Provider[]
 	 */
 	public function get_providers() {
 		return $this->providers;

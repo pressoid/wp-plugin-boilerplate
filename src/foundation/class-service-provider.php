@@ -10,9 +10,9 @@
 
 namespace Plugin_Name\Foundation;
 
-use Plugin_Name\Exceptions\Not_Recognized_Service_Exception;
-use Plugin_Name\Contract\Service as Interface_Service;
-use Plugin_Name\Contract\Service_Provider as Interface_Service_Provider;
+use Plugin_Name\Foundation\Exceptions\Not_Recognized_Service_Exception;
+use Plugin_Name\Foundation\Contract\Service as Interface_Service;
+use Plugin_Name\Foundation\Contract\Service_Provider as Interface_Service_Provider;
 
 /**
  * Class Service Provider.
@@ -58,7 +58,7 @@ abstract class Service_Provider implements Interface_Service_Provider {
 	 * Gets collection of defined services.
 	 *
 	 * @todo Change filter prefix to your unique plugin name.
-	 * @return \Plugin_Name\Contract\Service[]
+	 * @return \Plugin_Name\Foundation\Contract\Service[]
 	 */
 	public function get_services() {
 		return apply_filters( 'plugin_name_' . $this->get_name() . '_services', $this->services() );

@@ -11,7 +11,7 @@
 namespace Plugin_Name\Foundation\Page;
 
 use Plugin_Name\Foundation\Service;
-use Plugin_Name\Contract\Renderer;
+use Plugin_Name\Foundation\Contract\Renderer;
 
 /**
  * Class Page.

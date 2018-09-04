@@ -8,23 +8,17 @@
  * @copyright 2017 Your Name or Company Name
  */
 
-namespace Plugin_Name\Contract;
+namespace Plugin_Name\Foundation\Contract;
 
 /**
- * Interface of Registrar.
+ * Interface of the Service.
  *
- * Subject with ability to register.
+ * Generic interface for all services.
  *
  * @since   1.0.0
  *
- * @package Plugin_Name\Contract
+ * @package Plugin_Name\Foundation\Contract
  * @author  Your Name <email@example.com>
  */
-interface Registrar {
-	/**
-	 * Registers current subject.
-	 *
-	 * @return void
-	 */
-	public function register();
+interface Service extends Registrar {
 }

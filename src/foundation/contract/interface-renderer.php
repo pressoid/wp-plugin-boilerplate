@@ -8,7 +8,7 @@
  * @copyright 2017 Your Name or Company Name
  */
 
-namespace Plugin_Name\Contract;
+namespace Plugin_Name\Foundation\Contract;
 
 /**
  * Interface of Renderer.
@@ -17,7 +17,7 @@ namespace Plugin_Name\Contract;
  *
  * @since   1.0.0
  *
- * @package Plugin_Name\Contract
+ * @package Plugin_Name\Foundation\Contract
  * @author  Your Name <email@example.com>
  */
 interface Renderer {

@@ -10,7 +10,7 @@
 
 namespace Plugin_Name\Foundation\Shortcode;
 
-use Plugin_Name\Contract\Renderer;
+use Plugin_Name\Foundation\Contract\Renderer;
 use Plugin_Name\Foundation\Service;
 
 /**

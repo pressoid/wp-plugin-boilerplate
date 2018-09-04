@@ -10,7 +10,7 @@
 
 namespace Plugin_Name\Foundation;
 
-use Plugin_Name\Contract\Service as Interface_Service;
+use Plugin_Name\Foundation\Contract\Service as Interface_Service;
 
 /**
  * Class Service.

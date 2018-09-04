@@ -11,7 +11,7 @@
 namespace Plugin_Name\Foundation\Widget;
 
 use WP_Widget;
-use Plugin_Name\Contract\Service;
+use Plugin_Name\Foundation\Contract\Service;
 
 /**
  * Class Widget.

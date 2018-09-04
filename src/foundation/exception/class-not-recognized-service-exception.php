@@ -8,7 +8,7 @@
  * @copyright 2017 Your Name or Company Name
  */
 
-namespace Plugin_Name\Exception;
+namespace Plugin_Name\Foundation\Exception;
 
 use InvalidArgumentException;
 
@@ -19,7 +19,7 @@ use InvalidArgumentException;
  *
  * @since   1.0.0
  *
- * @package @package Plugin_Name\Exception
+ * @package Plugin_Name\Foundation
  * @author  Your Name <email@example.com>
  */
 class Not_Recognized_Service_Exception extends InvalidArgumentException {
