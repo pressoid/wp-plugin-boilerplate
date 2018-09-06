@@ -52,6 +52,21 @@ abstract class Service_Provider implements Interface_Service_Provider {
 
 			$service->register();
 		}
+
+		$this->bootstrap();
+	}
+
+	/**
+	 * Bootstraps registered services defined in provider.
+	 *
+	 * @return void
+	 */
+	protected function bootstrap() {
+		foreach ( $this->get_services() as $service ) {
+			if ( method_exists( $service, 'boot' ) ) {
+	            $service->boot();
+	        }
+		}
 	}
 
 	/**
