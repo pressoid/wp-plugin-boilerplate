@@ -26,6 +26,7 @@ return new Plugin_Name\Plugin(
 		Plugin_Name\Ajax\Ajax_Service_Provider::class,
 		Plugin_Name\Asset\Asset_Service_Provider::class,
 		Plugin_Name\Widget\Widget_Service_Provider::class,
+		Plugin_Name\Taxonomy\Taxonomy_Service_Provider::class,
 		Plugin_Name\Post_Type\Post_Type_Service_Provider::class,
 		Plugin_Name\Shortcode\Shortcode_Service_Provider::class,
 	]
